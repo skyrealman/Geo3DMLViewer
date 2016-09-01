@@ -9,24 +9,9 @@
 import Foundation
 import SceneKit
 
-protocol AbstractGeometry {
-    var id: String {get set}
-}
-protocol AbstractGeometricPrimitive: AbstractGeometry{
-    
-}
-protocol AbstractCurve: AbstractGeometricPrimitive {
-    
-}
-protocol AbstractSurface: AbstractGeometricPrimitive {
-    
-}
-protocol AbstractSolid: AbstractGeometricPrimitive {
-    
-}
-//dimension must be a positive integer, I should make a PositiveInteger class
-class GMLGrid: AbstractGeometry{
-    var id: String{
+
+struct GeoTin: AbstractSurfaceType{
+    var id: String?{
         get{
             return self.id
         }
@@ -34,55 +19,41 @@ class GMLGrid: AbstractGeometry{
             self.id = newValue
         }
     }
-    var dimension: Int
-    init(id: String, dimension: Int){
-        self.dimension = dimension
+    var name: String?{
+        get{
+            return self.name
+        }
+        set{
+            self.name = newValue
+        }
+    }
+    var vertices:  [Vertex]{
+        get{
+            return self.vertices
+        }
+        set{
+            self.vertices = newValue
+        }
+    }
+    var triangles: [Triangle]{
+        get{
+            return self.triangles
+        }
+        set{
+            self.triangles = newValue
+        }
+    }
+    init(id: String?, name: String?, vertices: [Vertex], triangles: [Triangle]){
         self.id = id
+        self.name = name
+        self.vertices = vertices
+        self.triangles = triangles
     }
 }
-class GeoGrid: AbstractGeometry{
-    var id: String{
+extension GeoTin: CustomStringConvertible{
+    var description: String {
         get{
-            return self.id
-        }
-        set{
-            self.id = newValue
+            return "Tin Model \(id) has \(vertices.count) vertices and \(triangles.count) triangles"
         }
     }
-    var grid: GMLGrid?
-    var TransformationMatrix: matrix_double4x4?
-
-}
-class GMLPoint: AbstractGeometricPrimitive{
-    var id: String{
-        get{
-            return self.id
-        }
-        set{
-            self.id = newValue
-        }
-    }
-}
-class LineString: AbstractCurve{
-    var id: String{
-        get{
-            return self.id
-        }
-        set{
-            self.id = newValue
-        }
-    }
-    var pos: [Double]?
-}
-
-class GeoTin: AbstractSurface{
-    var id: String{
-        get{
-            return self.id
-        }
-        set{
-            self.id = newValue
-        }
-    }
-    
 }

@@ -7,19 +7,45 @@
 //
 
 import Foundation
-protocol BaseType{
-    var annotation: String {get set}
+import SceneKit
+
+enum ModelType: String {
+    case Drill = "钻孔"
+    case Section = "剖面"
+    case Model = "三维地质模型"
+    case Isogram = "等值图"
+    case Other = "其它"
 }
-protocol Geo3DProjectType: BaseType {
-    var name: String {get set}
-    var description: String {get set}
-    var style: GeoSceneStylePropertyType {get set}
-    var models: [Geo3DModelType] {get set}
-    var maps: [Geo3DMapType] {get set}
+
+struct PosList{
+    var srsDimension: Int
+    var count: Int
+    var points: [SCNVector3]
+    init(srsDimension: Int, count: Int, points: [SCNVector3]){
+        self.count = count
+        self.srsDimension = srsDimension
+        self.points = points
+    }
 }
-protocol Geo3DModelType: BaseType{
-    
+
+struct Vertex{
+    var indexNo: Int
+    var srsDimension: Int
+    var points: [SCNVector3]
+    init(indexNo: Int, srsDimension: Int, points: [SCNVector3]){
+        self.indexNo = indexNo
+        self.srsDimension = srsDimension
+        self.points = points
+    }
 }
-protocol GeoSceneStylePropertyType: BaseType{
-    
+
+struct Triangle {
+    var indexNo: Int
+    var vertexList: [Int]
+    var neighborList: [Int]
+    init(indexNo: Int, vertexList: [Int], neighborList: [Int]){
+        self.indexNo = indexNo
+        self.neighborList = neighborList
+        self.vertexList = vertexList
+    }
 }

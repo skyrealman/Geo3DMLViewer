@@ -14,7 +14,7 @@
 		F8B65A6D1D77D76600827D0C /* Geo3DMLViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A6C1D77D76600827D0C /* Geo3DMLViewerTests.swift */; };
 		F8B65A781D77D76600827D0C /* Geo3DMLViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A771D77D76600827D0C /* Geo3DMLViewerUITests.swift */; };
 		F8B65A881D77D93600827D0C /* Geo3DMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A871D77D93600827D0C /* Geo3DMap.swift */; };
-		F8B65A911D77D94C00827D0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A891D77D94C00827D0C /* Base.swift */; };
+		F8B65A911D77D94C00827D0C /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A891D77D94C00827D0C /* Type.swift */; };
 		F8B65A921D77D94C00827D0C /* Geo3DModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8A1D77D94C00827D0C /* Geo3DModel.swift */; };
 		F8B65A931D77D94C00827D0C /* Geo3DModelMetadata.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8B1D77D94C00827D0C /* Geo3DModelMetadata.swift */; };
 		F8B65A941D77D94C00827D0C /* Geo3DProject.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8C1D77D94C00827D0C /* Geo3DProject.swift */; };
@@ -22,6 +22,7 @@
 		F8B65A961D77D94C00827D0C /* geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8E1D77D94C00827D0C /* geometry.swift */; };
 		F8B65A971D77D94C00827D0C /* Gml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8F1D77D94C00827D0C /* Gml.swift */; };
 		F8B65A981D77D94C00827D0C /* SpatialReferenceSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A901D77D94C00827D0C /* SpatialReferenceSystem.swift */; };
+		F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A9A1D7816CD00827D0C /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +56,7 @@
 		F8B65A771D77D76600827D0C /* Geo3DMLViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo3DMLViewerUITests.swift; sourceTree = "<group>"; };
 		F8B65A791D77D76600827D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F8B65A871D77D93600827D0C /* Geo3DMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geo3DMap.swift; sourceTree = "<group>"; };
-		F8B65A891D77D94C00827D0C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		F8B65A891D77D94C00827D0C /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
 		F8B65A8A1D77D94C00827D0C /* Geo3DModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geo3DModel.swift; sourceTree = "<group>"; };
 		F8B65A8B1D77D94C00827D0C /* Geo3DModelMetadata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geo3DModelMetadata.swift; sourceTree = "<group>"; };
 		F8B65A8C1D77D94C00827D0C /* Geo3DProject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Geo3DProject.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		F8B65A8E1D77D94C00827D0C /* geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = geometry.swift; sourceTree = "<group>"; };
 		F8B65A8F1D77D94C00827D0C /* Gml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gml.swift; sourceTree = "<group>"; };
 		F8B65A901D77D94C00827D0C /* SpatialReferenceSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpatialReferenceSystem.swift; sourceTree = "<group>"; };
+		F8B65A9A1D7816CD00827D0C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,7 +146,7 @@
 		F8B65A991D77D95E00827D0C /* objects */ = {
 			isa = PBXGroup;
 			children = (
-				F8B65A891D77D94C00827D0C /* Base.swift */,
+				F8B65A891D77D94C00827D0C /* Type.swift */,
 				F8B65A8A1D77D94C00827D0C /* Geo3DModel.swift */,
 				F8B65A8B1D77D94C00827D0C /* Geo3DModelMetadata.swift */,
 				F8B65A8C1D77D94C00827D0C /* Geo3DProject.swift */,
@@ -153,6 +155,7 @@
 				F8B65A8F1D77D94C00827D0C /* Gml.swift */,
 				F8B65A901D77D94C00827D0C /* SpatialReferenceSystem.swift */,
 				F8B65A871D77D93600827D0C /* Geo3DMap.swift */,
+				F8B65A9A1D7816CD00827D0C /* Base.swift */,
 			);
 			name = objects;
 			sourceTree = "<group>";
@@ -287,7 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8B65A911D77D94C00827D0C /* Base.swift in Sources */,
+				F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */,
+				F8B65A911D77D94C00827D0C /* Type.swift in Sources */,
 				F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */,
 				F8B65A951D77D94C00827D0C /* GeoFeature.swift in Sources */,
 				F8B65A881D77D93600827D0C /* Geo3DMap.swift in Sources */,
