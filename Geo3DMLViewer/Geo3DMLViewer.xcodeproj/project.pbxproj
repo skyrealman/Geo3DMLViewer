@@ -1,0 +1,498 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5A1D77D76600827D0C /* AppDelegate.swift */; };
+		F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5C1D77D76600827D0C /* ViewController.swift */; };
+		F8B65A5F1D77D76600827D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B65A5E1D77D76600827D0C /* Assets.xcassets */; };
+		F8B65A621D77D76600827D0C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8B65A601D77D76600827D0C /* Main.storyboard */; };
+		F8B65A6D1D77D76600827D0C /* Geo3DMLViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A6C1D77D76600827D0C /* Geo3DMLViewerTests.swift */; };
+		F8B65A781D77D76600827D0C /* Geo3DMLViewerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A771D77D76600827D0C /* Geo3DMLViewerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F8B65A691D77D76600827D0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B65A4F1D77D76600827D0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B65A561D77D76600827D0C;
+			remoteInfo = Geo3DMLViewer;
+		};
+		F8B65A741D77D76600827D0C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F8B65A4F1D77D76600827D0C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8B65A561D77D76600827D0C;
+			remoteInfo = Geo3DMLViewer;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo3DMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B65A5A1D77D76600827D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F8B65A5C1D77D76600827D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F8B65A5E1D77D76600827D0C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F8B65A611D77D76600827D0C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F8B65A631D77D76600827D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8B65A681D77D76600827D0C /* Geo3DMLViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Geo3DMLViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B65A6C1D77D76600827D0C /* Geo3DMLViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo3DMLViewerTests.swift; sourceTree = "<group>"; };
+		F8B65A6E1D77D76600827D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8B65A731D77D76600827D0C /* Geo3DMLViewerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Geo3DMLViewerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F8B65A771D77D76600827D0C /* Geo3DMLViewerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Geo3DMLViewerUITests.swift; sourceTree = "<group>"; };
+		F8B65A791D77D76600827D0C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F8B65A541D77D76600827D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B65A651D77D76600827D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B65A701D77D76600827D0C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F8B65A4E1D77D76600827D0C = {
+			isa = PBXGroup;
+			children = (
+				F8B65A591D77D76600827D0C /* Geo3DMLViewer */,
+				F8B65A6B1D77D76600827D0C /* Geo3DMLViewerTests */,
+				F8B65A761D77D76600827D0C /* Geo3DMLViewerUITests */,
+				F8B65A581D77D76600827D0C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F8B65A581D77D76600827D0C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */,
+				F8B65A681D77D76600827D0C /* Geo3DMLViewerTests.xctest */,
+				F8B65A731D77D76600827D0C /* Geo3DMLViewerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F8B65A591D77D76600827D0C /* Geo3DMLViewer */ = {
+			isa = PBXGroup;
+			children = (
+				F8B65A5A1D77D76600827D0C /* AppDelegate.swift */,
+				F8B65A5C1D77D76600827D0C /* ViewController.swift */,
+				F8B65A5E1D77D76600827D0C /* Assets.xcassets */,
+				F8B65A601D77D76600827D0C /* Main.storyboard */,
+				F8B65A631D77D76600827D0C /* Info.plist */,
+			);
+			path = Geo3DMLViewer;
+			sourceTree = "<group>";
+		};
+		F8B65A6B1D77D76600827D0C /* Geo3DMLViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F8B65A6C1D77D76600827D0C /* Geo3DMLViewerTests.swift */,
+				F8B65A6E1D77D76600827D0C /* Info.plist */,
+			);
+			path = Geo3DMLViewerTests;
+			sourceTree = "<group>";
+		};
+		F8B65A761D77D76600827D0C /* Geo3DMLViewerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F8B65A771D77D76600827D0C /* Geo3DMLViewerUITests.swift */,
+				F8B65A791D77D76600827D0C /* Info.plist */,
+			);
+			path = Geo3DMLViewerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8B65A561D77D76600827D0C /* Geo3DMLViewer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B65A7C1D77D76600827D0C /* Build configuration list for PBXNativeTarget "Geo3DMLViewer" */;
+			buildPhases = (
+				F8B65A531D77D76600827D0C /* Sources */,
+				F8B65A541D77D76600827D0C /* Frameworks */,
+				F8B65A551D77D76600827D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Geo3DMLViewer;
+			productName = Geo3DMLViewer;
+			productReference = F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F8B65A671D77D76600827D0C /* Geo3DMLViewerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B65A7F1D77D76600827D0C /* Build configuration list for PBXNativeTarget "Geo3DMLViewerTests" */;
+			buildPhases = (
+				F8B65A641D77D76600827D0C /* Sources */,
+				F8B65A651D77D76600827D0C /* Frameworks */,
+				F8B65A661D77D76600827D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8B65A6A1D77D76600827D0C /* PBXTargetDependency */,
+			);
+			name = Geo3DMLViewerTests;
+			productName = Geo3DMLViewerTests;
+			productReference = F8B65A681D77D76600827D0C /* Geo3DMLViewerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F8B65A721D77D76600827D0C /* Geo3DMLViewerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8B65A821D77D76600827D0C /* Build configuration list for PBXNativeTarget "Geo3DMLViewerUITests" */;
+			buildPhases = (
+				F8B65A6F1D77D76600827D0C /* Sources */,
+				F8B65A701D77D76600827D0C /* Frameworks */,
+				F8B65A711D77D76600827D0C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F8B65A751D77D76600827D0C /* PBXTargetDependency */,
+			);
+			name = Geo3DMLViewerUITests;
+			productName = Geo3DMLViewerUITests;
+			productReference = F8B65A731D77D76600827D0C /* Geo3DMLViewerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F8B65A4F1D77D76600827D0C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = skyrealman;
+				TargetAttributes = {
+					F8B65A561D77D76600827D0C = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					F8B65A671D77D76600827D0C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F8B65A561D77D76600827D0C;
+					};
+					F8B65A721D77D76600827D0C = {
+						CreatedOnToolsVersion = 7.3.1;
+						TestTargetID = F8B65A561D77D76600827D0C;
+					};
+				};
+			};
+			buildConfigurationList = F8B65A521D77D76600827D0C /* Build configuration list for PBXProject "Geo3DMLViewer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F8B65A4E1D77D76600827D0C;
+			productRefGroup = F8B65A581D77D76600827D0C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F8B65A561D77D76600827D0C /* Geo3DMLViewer */,
+				F8B65A671D77D76600827D0C /* Geo3DMLViewerTests */,
+				F8B65A721D77D76600827D0C /* Geo3DMLViewerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F8B65A551D77D76600827D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B65A5F1D77D76600827D0C /* Assets.xcassets in Resources */,
+				F8B65A621D77D76600827D0C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B65A661D77D76600827D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B65A711D77D76600827D0C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F8B65A531D77D76600827D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */,
+				F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B65A641D77D76600827D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B65A6D1D77D76600827D0C /* Geo3DMLViewerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F8B65A6F1D77D76600827D0C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F8B65A781D77D76600827D0C /* Geo3DMLViewerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F8B65A6A1D77D76600827D0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B65A561D77D76600827D0C /* Geo3DMLViewer */;
+			targetProxy = F8B65A691D77D76600827D0C /* PBXContainerItemProxy */;
+		};
+		F8B65A751D77D76600827D0C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8B65A561D77D76600827D0C /* Geo3DMLViewer */;
+			targetProxy = F8B65A741D77D76600827D0C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F8B65A601D77D76600827D0C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F8B65A611D77D76600827D0C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F8B65A7A1D77D76600827D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F8B65A7B1D77D76600827D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		F8B65A7D1D77D76600827D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geo3DMLViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F8B65A7E1D77D76600827D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geo3DMLViewer/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F8B65A801D77D76600827D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geo3DMLViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geo3DMLViewer.app/Contents/MacOS/Geo3DMLViewer";
+			};
+			name = Debug;
+		};
+		F8B65A811D77D76600827D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geo3DMLViewerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Geo3DMLViewer.app/Contents/MacOS/Geo3DMLViewer";
+			};
+			name = Release;
+		};
+		F8B65A831D77D76600827D0C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geo3DMLViewerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Geo3DMLViewer;
+			};
+			name = Debug;
+		};
+		F8B65A841D77D76600827D0C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Geo3DMLViewerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Geo3DMLViewer;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F8B65A521D77D76600827D0C /* Build configuration list for PBXProject "Geo3DMLViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B65A7A1D77D76600827D0C /* Debug */,
+				F8B65A7B1D77D76600827D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F8B65A7C1D77D76600827D0C /* Build configuration list for PBXNativeTarget "Geo3DMLViewer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B65A7D1D77D76600827D0C /* Debug */,
+				F8B65A7E1D77D76600827D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F8B65A7F1D77D76600827D0C /* Build configuration list for PBXNativeTarget "Geo3DMLViewerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B65A801D77D76600827D0C /* Debug */,
+				F8B65A811D77D76600827D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F8B65A821D77D76600827D0C /* Build configuration list for PBXNativeTarget "Geo3DMLViewerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F8B65A831D77D76600827D0C /* Debug */,
+				F8B65A841D77D76600827D0C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F8B65A4F1D77D76600827D0C /* Project object */;
+}
