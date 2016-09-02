@@ -7,7 +7,7 @@
 //
 
 import Foundation
-class Geo3DModelMetadata{
+struct Geo3DModelMetadata{
     var description: String
     var toolName: String
     var toolVersion: String

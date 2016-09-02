@@ -7,16 +7,19 @@
 //
 
 import Foundation
-class AbstractSpatialReferenceSystem{
+
+protocol AbstractSpatialReferenceSystem: BaseType{
     
 }
-class SpatialReferenceSystemUsingGeographicIdentifiers: AbstractSpatialReferenceSystem{
+struct SpatialReferenceSystemUsingGeographicIdentifiers: AbstractSpatialReferenceSystem {
+    var annotation: String = ""
     var name: String
     init(name: String){
         self.name = name
     }
 }
-class CoordinateReferenceSystem: AbstractSpatialReferenceSystem {
+struct CoordinateReferenceSystem: AbstractSpatialReferenceSystem {
+    var annotation: String = ""
     var coordinateReferenceSystemIdentifier: String
     var coordinateSystemType: String
     var coordinateSystemIdentifier: String
@@ -28,7 +31,8 @@ class CoordinateReferenceSystem: AbstractSpatialReferenceSystem {
         self.parameter = parameter
     }
 }
-class VerticalReferenceSystem: AbstractSpatialReferenceSystem {
+struct VerticalReferenceSystem: AbstractSpatialReferenceSystem {
+    var annotation: String = ""
     var verticialReferenceSystem: String
     init(verticialReferenceSystem: String){
         self.verticialReferenceSystem = verticialReferenceSystem

@@ -21,7 +21,7 @@
 		F8B65A951D77D94C00827D0C /* GeoFeature.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8D1D77D94C00827D0C /* GeoFeature.swift */; };
 		F8B65A961D77D94C00827D0C /* geometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8E1D77D94C00827D0C /* geometry.swift */; };
 		F8B65A971D77D94C00827D0C /* Gml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8F1D77D94C00827D0C /* Gml.swift */; };
-		F8B65A981D77D94C00827D0C /* SpatialReferenceSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A901D77D94C00827D0C /* SpatialReferenceSystem.swift */; };
+		F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A901D77D94C00827D0C /* GeoSRS.swift */; };
 		F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A9A1D7816CD00827D0C /* Base.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +63,7 @@
 		F8B65A8D1D77D94C00827D0C /* GeoFeature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoFeature.swift; sourceTree = "<group>"; };
 		F8B65A8E1D77D94C00827D0C /* geometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = geometry.swift; sourceTree = "<group>"; };
 		F8B65A8F1D77D94C00827D0C /* Gml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gml.swift; sourceTree = "<group>"; };
-		F8B65A901D77D94C00827D0C /* SpatialReferenceSystem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpatialReferenceSystem.swift; sourceTree = "<group>"; };
+		F8B65A901D77D94C00827D0C /* GeoSRS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoSRS.swift; sourceTree = "<group>"; };
 		F8B65A9A1D7816CD00827D0C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -153,7 +153,7 @@
 				F8B65A8D1D77D94C00827D0C /* GeoFeature.swift */,
 				F8B65A8E1D77D94C00827D0C /* geometry.swift */,
 				F8B65A8F1D77D94C00827D0C /* Gml.swift */,
-				F8B65A901D77D94C00827D0C /* SpatialReferenceSystem.swift */,
+				F8B65A901D77D94C00827D0C /* GeoSRS.swift */,
 				F8B65A871D77D93600827D0C /* Geo3DMap.swift */,
 				F8B65A9A1D7816CD00827D0C /* Base.swift */,
 			);
@@ -299,7 +299,7 @@
 				F8B65A921D77D94C00827D0C /* Geo3DModel.swift in Sources */,
 				F8B65A961D77D94C00827D0C /* geometry.swift in Sources */,
 				F8B65A941D77D94C00827D0C /* Geo3DProject.swift in Sources */,
-				F8B65A981D77D94C00827D0C /* SpatialReferenceSystem.swift in Sources */,
+				F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */,
 				F8B65A971D77D94C00827D0C /* Gml.swift in Sources */,
 				F8B65A931D77D94C00827D0C /* Geo3DModelMetadata.swift in Sources */,
 			);

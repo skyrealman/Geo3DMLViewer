@@ -8,11 +8,10 @@
 
 import Foundation
 import SceneKit
-
 enum ModelType: String {
     case Drill = "钻孔"
     case Section = "剖面"
-    case Model = "三维地质模型"
+    case Map3D = "三维地质模型"
     case Isogram = "等值图"
     case Other = "其它"
 }

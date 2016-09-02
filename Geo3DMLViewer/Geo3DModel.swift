@@ -8,18 +8,22 @@
 
 import Foundation
 
-struct Geo3DModel {
+protocol Geo3DModelType: BaseType{
+    var name: String {get}
+    var type: ModelType {get}
+}
+
+struct Geo3DModel: Geo3DModelType {
+    var annotation: String = ""
     var name: String
-    var type: String
-    var metadata: Geo3DModelMetadata
-    var featureClasses: [GeoFeatureClassType]
+    var type: ModelType
+    var featureClass: [GeoFeatureClassType]
     var featureRelationship: [GeoFeatureRelationType]
     
-    init(name: String, type: String, metadata: Geo3DModelMetadata, featureClasses: [GeoFeatureClassType], featureRelationship: [GeoFeatureRelationType]){
+    init(name: String, type: ModelType, featureClass: [GeoFeatureClassType], featureRelationship: [GeoFeatureRelationType]){
         self.name = name
         self.type = type
-        self.metadata = metadata
-        self.featureClasses = featureClasses
+        self.featureClass = featureClass
         self.featureRelationship = featureRelationship
     }
 }

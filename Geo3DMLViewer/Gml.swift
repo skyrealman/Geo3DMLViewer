@@ -29,3 +29,7 @@ protocol AbstractSurfaceType: AbstractGeometricPrimitive{
     var triangles: [Triangle]{get set}
     
 }
+
+protocol AbstractFeature: AbstractGML{
+    
+}
