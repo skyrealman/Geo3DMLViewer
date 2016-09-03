@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="10117"/>
+        <plugIn identifier="com.apple.SceneKitIBPlugin" version="10117"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,41 +643,228 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Geo3DMLViewer" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="WindowController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="171" y="227" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <toolbar key="toolbar" implicitIdentifier="E6E560E8-F45D-47B6-A4F0-C1108D95054F" autosavesConfiguration="NO" displayMode="iconAndLabel" sizeMode="regular" id="1bi-yY-b07">
+                            <allowedToolbarItems>
+                                <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="an4-3V-rP0"/>
+                                <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="jbD-E4-KrI"/>
+                                <toolbarItem implicitItemIdentifier="54CAC472-7AEA-4C8C-9B28-5123B65CDC9C" label="Custom View" paletteLabel="Custom View" id="IjW-wH-1zN" userLabel="Side">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="104" height="24"/>
+                                    <size key="maxSize" width="104" height="24"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="go5-X0-GFp">
+                                        <rect key="frame" x="0.0" y="14" width="104" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="momentary" id="8oK-Np-vOc">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="left" width="32"/>
+                                                <segment image="bottom" width="32" tag="1"/>
+                                                <segment image="right" width="32">
+                                                    <nil key="label"/>
+                                                </segment>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
+                                    <connections>
+                                        <action selector="sideControl:" target="B8D-0N-5wS" id="7yz-HN-aUD"/>
+                                    </connections>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="70F076EB-CB6C-4E73-87E1-AE232CDEDCD8" label="Open" paletteLabel="Open" id="xVH-nY-Hbk" userLabel="Open">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="14" height="24"/>
+                                    <size key="maxSize" width="100" height="26"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="RtU-c6-cbB">
+                                        <rect key="frame" x="0.0" y="14" width="41" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectAny" id="Xtv-bi-nxq">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="open"/>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="DE61891A-3BB5-458A-B55C-8B098BDC6E47" label="Screenshot" paletteLabel="Screenshot" id="Epl-Cg-vFY" userLabel="Screenshot">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="14" height="24"/>
+                                    <size key="maxSize" width="100" height="26"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="VA1-1N-4Ci">
+                                        <rect key="frame" x="13" y="14" width="41" height="25"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectAny" id="MfB-Td-vxd">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="screenshot">
+                                                    <nil key="label"/>
+                                                </segment>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
+                                </toolbarItem>
+                            </allowedToolbarItems>
+                            <defaultToolbarItems>
+                                <toolbarItem reference="xVH-nY-Hbk"/>
+                                <toolbarItem reference="Epl-Cg-vFY"/>
+                                <toolbarItem reference="jbD-E4-KrI"/>
+                                <toolbarItem reference="IjW-wH-1zN"/>
+                            </defaultToolbarItems>
+                        </toolbar>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="kew-Zo-ycZ" kind="relationship" relationship="window.shadowedContentViewController" id="2B4-ST-7UK"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Left Split View Controller-->
+        <scene sceneID="fOw-sG-cCm">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <splitViewController storyboardIdentifier="LeftSplitView" id="kew-Zo-ycZ" customClass="LeftSplitViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="yze-lk-4Kh"/>
+                        <splitViewItem holdingPriority="1" id="DSH-KE-xjM"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="oGH-TD-0UM">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="rTf-5Q-J6J" kind="relationship" relationship="splitItems" id="EJj-Pf-Mio"/>
+                        <segue destination="JOK-Ji-HfK" kind="relationship" relationship="splitItems" id="Rrk-ZT-kqc"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="E7l-eP-c7O" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="818"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="r0V-Ms-OP2">
+            <objects>
+                <viewController id="ZQH-Xf-lC3" sceneMemberID="viewController">
+                    <view key="view" id="Mos-Dn-9lB">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="cH3-bi-NWV" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="1485" y="1343"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="CgZ-aT-I10">
+            <objects>
+                <customObject id="hRp-Rj-Fs3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="rTf-5Q-J6J" sceneMemberID="viewController">
+                    <view key="view" id="0em-Nj-c59">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="792" y="425"/>
+        </scene>
+        <!--Right Split View Controller-->
+        <scene sceneID="gck-Ky-Q8d">
+            <objects>
+                <splitViewController id="JOK-Ji-HfK" customClass="RightSplitViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="3Ua-Or-JYr"/>
+                        <splitViewItem id="DSe-hq-Yy5"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="dFk-8N-bnq">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="UhQ-0D-gdp" kind="relationship" relationship="splitItems" id="32a-YH-Ufk"/>
+                        <segue destination="ZQH-Xf-lC3" kind="relationship" relationship="splitItems" id="uIT-1T-I4U"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="0nk-iE-riX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="792" y="1115"/>
+        </scene>
+        <!--Center Split View Controller-->
+        <scene sceneID="yyB-eo-dSB">
+            <objects>
+                <splitViewController id="UhQ-0D-gdp" customClass="CenterSplitViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="YpC-TF-V06" userLabel="Top"/>
+                        <splitViewItem id="SrC-UP-09m" userLabel="Bottom"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="paneSplitter" id="2gW-W3-Tq7">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="GZ3-bl-1kw" kind="relationship" relationship="splitItems" id="4FD-30-4ds"/>
+                        <segue destination="XZo-EA-xke" kind="relationship" relationship="splitItems" id="U3P-Sm-PqI"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="NSb-pl-RsT" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1485" y="672"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mSP-wJ-ksd">
+            <objects>
+                <viewController id="GZ3-bl-1kw" sceneMemberID="viewController">
+                    <view key="view" id="2MW-A0-g6K">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <sceneView translatesAutoresizingMaskIntoConstraints="NO" id="Z9k-m2-5hn">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </sceneView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Z9k-m2-5hn" secondAttribute="trailing" id="9QR-gk-DDj"/>
+                            <constraint firstItem="Z9k-m2-5hn" firstAttribute="leading" secondItem="2MW-A0-g6K" secondAttribute="leading" id="Iiz-or-Bfr"/>
+                            <constraint firstAttribute="bottom" secondItem="Z9k-m2-5hn" secondAttribute="bottom" id="eG6-WG-Q7W"/>
+                            <constraint firstItem="Z9k-m2-5hn" firstAttribute="top" secondItem="2MW-A0-g6K" secondAttribute="top" id="hoK-LJ-yfv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="MB9-0y-0ev" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2165" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="7N3-IJ-f85">
+            <objects>
+                <viewController id="XZo-EA-xke" sceneMemberID="viewController">
+                    <view key="view" id="rUM-Bw-BCE">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="ADQ-3f-Sj4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2165" y="905"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bottom" width="50" height="50"/>
+        <image name="left" width="50" height="50"/>
+        <image name="open" width="50" height="50"/>
+        <image name="right" width="50" height="50"/>
+        <image name="screenshot" width="50" height="50"/>
+    </resources>
 </document>

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87541D79D65E006511B4 /* SplitViewController.swift */; };
+		12DC87571D79D926006511B4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87561D79D926006511B4 /* WindowController.swift */; };
 		F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5A1D77D76600827D0C /* AppDelegate.swift */; };
 		F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5C1D77D76600827D0C /* ViewController.swift */; };
 		F8B65A5F1D77D76600827D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B65A5E1D77D76600827D0C /* Assets.xcassets */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12DC87541D79D65E006511B4 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		12DC87561D79D926006511B4 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo3DMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B65A5A1D77D76600827D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B65A5C1D77D76600827D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12DC87531D79D630006511B4 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				12DC87541D79D65E006511B4 /* SplitViewController.swift */,
+				12DC87561D79D926006511B4 /* WindowController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		F8B65A4E1D77D76600827D0C = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +128,7 @@
 		F8B65A591D77D76600827D0C /* Geo3DMLViewer */ = {
 			isa = PBXGroup;
 			children = (
+				12DC87531D79D630006511B4 /* controller */,
 				F8B65A991D77D95E00827D0C /* objects */,
 				F8B65A5A1D77D76600827D0C /* AppDelegate.swift */,
 				F8B65A5C1D77D76600827D0C /* ViewController.swift */,
@@ -293,12 +307,14 @@
 				F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */,
 				F8B65A911D77D94C00827D0C /* Type.swift in Sources */,
 				F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */,
+				12DC87571D79D926006511B4 /* WindowController.swift in Sources */,
 				F8B65A951D77D94C00827D0C /* GeoFeature.swift in Sources */,
 				F8B65A881D77D93600827D0C /* Geo3DMap.swift in Sources */,
 				F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */,
 				F8B65A921D77D94C00827D0C /* Geo3DModel.swift in Sources */,
 				F8B65A961D77D94C00827D0C /* geometry.swift in Sources */,
 				F8B65A941D77D94C00827D0C /* Geo3DProject.swift in Sources */,
+				12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */,
 				F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */,
 				F8B65A971D77D94C00827D0C /* Gml.swift in Sources */,
 				F8B65A931D77D94C00827D0C /* Geo3DModelMetadata.swift in Sources */,
