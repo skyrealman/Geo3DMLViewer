@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		125203141D7BCA0300013672 /* ToolbarTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 125203131D7BCA0300013672 /* ToolbarTextField.swift */; };
 		12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87541D79D65E006511B4 /* SplitViewController.swift */; };
 		12DC87571D79D926006511B4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87561D79D926006511B4 /* WindowController.swift */; };
 		F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5A1D77D76600827D0C /* AppDelegate.swift */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		125203131D7BCA0300013672 /* ToolbarTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToolbarTextField.swift; sourceTree = "<group>"; };
 		12DC87541D79D65E006511B4 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		12DC87561D79D926006511B4 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
 		F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo3DMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		125203121D7BC9DA00013672 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				125203131D7BCA0300013672 /* ToolbarTextField.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
 		12DC87531D79D630006511B4 /* controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -128,6 +138,7 @@
 		F8B65A591D77D76600827D0C /* Geo3DMLViewer */ = {
 			isa = PBXGroup;
 			children = (
+				125203121D7BC9DA00013672 /* UI */,
 				12DC87531D79D630006511B4 /* controller */,
 				F8B65A991D77D95E00827D0C /* objects */,
 				F8B65A5A1D77D76600827D0C /* AppDelegate.swift */,
@@ -305,6 +316,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */,
+				125203141D7BCA0300013672 /* ToolbarTextField.swift in Sources */,
 				F8B65A911D77D94C00827D0C /* Type.swift in Sources */,
 				F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */,
 				12DC87571D79D926006511B4 /* WindowController.swift in Sources */,

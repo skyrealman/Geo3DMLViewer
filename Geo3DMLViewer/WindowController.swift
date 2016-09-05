@@ -19,6 +19,8 @@ class WindowController: NSWindowController {
         self.resize(800, 350)
         // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
         self.window?.titleVisibility = NSWindowTitleVisibility.Hidden
+        self.window?.opaque = false
+        self.window?.backgroundColor = NSColor.whiteColor().colorWithAlphaComponent(0.95)
     }
     func resize(width: Float, _ height: Float){
         var windowFrame = window?.frame

@@ -17,7 +17,7 @@ class LeftSplitViewController: NSSplitViewController {
     }
     override func viewWillAppear() {
         super.viewWillAppear()
-        splitView.setPosition(view.bounds.width / 5.0, ofDividerAtIndex: 0)
+        splitView.setPosition(view.bounds.width / 6.0, ofDividerAtIndex: 0)
     }
 
 }
@@ -29,7 +29,7 @@ class RightSplitViewController: NSSplitViewController{
     }
     override func viewWillAppear() {
         super.viewWillAppear()
-        splitView.setPosition(3.0 * view.bounds.width / 4.0, ofDividerAtIndex: 0)
+        splitView.setPosition(4.0 * view.bounds.width / 5.0, ofDividerAtIndex: 0)
     }
 }
 
@@ -42,4 +42,15 @@ class CenterSplitViewController: NSSplitViewController{
         super.viewWillAppear()
         splitView.setPosition(4.0 * view.bounds.height / 5.0, ofDividerAtIndex: 0)
     }
+}
+
+class OutlineViewController: NSViewController{
+    
+    @IBAction func showOutline(sender: NSButton) {
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
 }

@@ -661,7 +661,7 @@
                             <allowedToolbarItems>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="an4-3V-rP0"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="jbD-E4-KrI"/>
-                                <toolbarItem implicitItemIdentifier="54CAC472-7AEA-4C8C-9B28-5123B65CDC9C" label="Custom View" paletteLabel="Custom View" id="IjW-wH-1zN" userLabel="Side">
+                                <toolbarItem implicitItemIdentifier="54CAC472-7AEA-4C8C-9B28-5123B65CDC9C" label="Custom View" paletteLabel="" id="IjW-wH-1zN" userLabel="Side">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="104" height="24"/>
                                     <size key="maxSize" width="104" height="24"/>
@@ -683,10 +683,10 @@
                                         <action selector="sideControl:" target="B8D-0N-5wS" id="7yz-HN-aUD"/>
                                     </connections>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="70F076EB-CB6C-4E73-87E1-AE232CDEDCD8" label="Open" paletteLabel="Open" id="xVH-nY-Hbk" userLabel="Open">
+                                <toolbarItem implicitItemIdentifier="70F076EB-CB6C-4E73-87E1-AE232CDEDCD8" label="Open" paletteLabel="" id="xVH-nY-Hbk" userLabel="Open">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="14" height="24"/>
-                                    <size key="maxSize" width="100" height="26"/>
+                                    <size key="maxSize" width="41" height="26"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="RtU-c6-cbB">
                                         <rect key="frame" x="0.0" y="14" width="41" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -698,12 +698,12 @@
                                         </segmentedCell>
                                     </segmentedControl>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="DE61891A-3BB5-458A-B55C-8B098BDC6E47" label="Screenshot" paletteLabel="Screenshot" id="Epl-Cg-vFY" userLabel="Screenshot">
+                                <toolbarItem implicitItemIdentifier="DE61891A-3BB5-458A-B55C-8B098BDC6E47" label="Screenshot" paletteLabel="" id="Epl-Cg-vFY" userLabel="Screenshot">
                                     <nil key="toolTip"/>
                                     <size key="minSize" width="14" height="24"/>
-                                    <size key="maxSize" width="100" height="26"/>
+                                    <size key="maxSize" width="41" height="26"/>
                                     <segmentedControl key="view" verticalHuggingPriority="750" id="VA1-1N-4Ci">
-                                        <rect key="frame" x="13" y="14" width="41" height="25"/>
+                                        <rect key="frame" x="0.0" y="14" width="41" height="25"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectAny" id="MfB-Td-vxd">
                                             <font key="font" metaFont="system"/>
@@ -715,10 +715,46 @@
                                         </segmentedCell>
                                     </segmentedControl>
                                 </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="1E451B8D-BF9D-413F-AD59-6682238DD1DC" label="ProgressBar" paletteLabel="" id="Sl0-eI-34E">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="100" height="22"/>
+                                    <size key="maxSize" width="500" height="22"/>
+                                    <textField key="view" verticalHuggingPriority="750" id="e0H-rr-5ZW" customClass="ToolbarTextField" customModule="Geo3DMLViewer" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="14" width="280" height="22"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zLL-Rf-tTZ">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </toolbarItem>
+                                <toolbarItem implicitItemIdentifier="505AE0EE-1F12-479C-958B-3523C8883494" label="Operation" paletteLabel="" id="MfG-hh-CGa">
+                                    <nil key="toolTip"/>
+                                    <size key="minSize" width="104" height="24"/>
+                                    <size key="maxSize" width="104" height="24"/>
+                                    <segmentedControl key="view" verticalHuggingPriority="750" id="347-12-70N">
+                                        <rect key="frame" x="0.0" y="14" width="104" height="24"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                        <segmentedCell key="cell" borderStyle="border" alignment="left" style="texturedSquare" trackingMode="selectOne" id="R1g-Sx-xzp">
+                                            <font key="font" metaFont="system"/>
+                                            <segments>
+                                                <segment image="click" width="32"/>
+                                                <segment image="pan" width="32" tag="1"/>
+                                                <segment image="rotate" width="32" selected="YES">
+                                                    <nil key="label"/>
+                                                </segment>
+                                            </segments>
+                                        </segmentedCell>
+                                    </segmentedControl>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
                                 <toolbarItem reference="xVH-nY-Hbk"/>
                                 <toolbarItem reference="Epl-Cg-vFY"/>
+                                <toolbarItem reference="MfG-hh-CGa"/>
+                                <toolbarItem reference="jbD-E4-KrI"/>
+                                <toolbarItem reference="Sl0-eI-34E"/>
                                 <toolbarItem reference="jbD-E4-KrI"/>
                                 <toolbarItem reference="IjW-wH-1zN"/>
                             </defaultToolbarItems>
@@ -737,8 +773,8 @@
             <objects>
                 <splitViewController storyboardIdentifier="LeftSplitView" id="kew-Zo-ycZ" customClass="LeftSplitViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="yze-lk-4Kh"/>
-                        <splitViewItem holdingPriority="1" id="DSH-KE-xjM"/>
+                        <splitViewItem holdingPriority="500" id="yze-lk-4Kh"/>
+                        <splitViewItem holdingPriority="200" id="DSH-KE-xjM"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="oGH-TD-0UM">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -766,14 +802,102 @@
             </objects>
             <point key="canvasLocation" x="1485" y="1343"/>
         </scene>
-        <!--View Controller-->
+        <!--Outline View Controller-->
         <scene sceneID="CgZ-aT-I10">
             <objects>
                 <customObject id="hRp-Rj-Fs3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController id="rTf-5Q-J6J" sceneMemberID="viewController">
+                <viewController id="rTf-5Q-J6J" customClass="OutlineViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0em-Nj-c59">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button translatesAutoresizingMaskIntoConstraints="NO" id="IDg-cl-TNe">
+                                <rect key="frame" x="11" y="236" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="stj-QZ-STQ"/>
+                                </constraints>
+                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSAdvanced" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="XSu-MP-f4r">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                            </button>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BZ8-lS-lTm">
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="231"/>
+                                <clipView key="contentView" drawsBackground="NO" copiesOnScroll="NO" id="13h-fM-FYm">
+                                    <rect key="frame" x="1" y="1" width="198" height="229"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="dQd-lW-FkO" id="QMq-mv-8h7">
+                                            <rect key="frame" x="0.0" y="0.0" width="198" height="0.0"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <size key="intercellSpacing" width="3" height="2"/>
+                                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
+                                            <tableColumns>
+                                                <tableColumn width="195" minWidth="40" maxWidth="1000" id="dQd-lW-FkO">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
+                                                        <font key="font" metaFont="smallSystem"/>
+                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
+                                                    </tableHeaderCell>
+                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="zDT-7l-wVU">
+                                                        <font key="font" metaFont="system"/>
+                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                    </textFieldCell>
+                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
+                                                    <prototypeCellViews>
+                                                        <tableCellView id="fTc-ha-ZKh">
+                                                            <rect key="frame" x="1" y="1" width="195" height="17"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                            <subviews>
+                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="jp9-63-QLP">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="17"/>
+                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="2gy-2t-xEk">
+                                                                        <font key="font" metaFont="system"/>
+                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                    </textFieldCell>
+                                                                </textField>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="jp9-63-QLP" firstAttribute="centerY" secondItem="fTc-ha-ZKh" secondAttribute="centerY" id="80H-TY-TDO"/>
+                                                                <constraint firstAttribute="trailing" secondItem="jp9-63-QLP" secondAttribute="trailing" constant="97" id="aiJ-v3-qgj"/>
+                                                                <constraint firstItem="jp9-63-QLP" firstAttribute="leading" secondItem="fTc-ha-ZKh" secondAttribute="leading" constant="2" id="eGo-Uv-Mb6"/>
+                                                            </constraints>
+                                                            <connections>
+                                                                <outlet property="textField" destination="jp9-63-QLP" id="Vyv-nR-De3"/>
+                                                            </connections>
+                                                        </tableCellView>
+                                                    </prototypeCellViews>
+                                                </tableColumn>
+                                            </tableColumns>
+                                        </outlineView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="QKv-Hy-7A2"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="7M2-8N-mqh">
+                                    <rect key="frame" x="1" y="214" width="198" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="znb-Jl-fYk">
+                                    <rect key="frame" x="183" y="1" width="16" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="IDg-cl-TNe" firstAttribute="top" secondItem="0em-Nj-c59" secondAttribute="top" constant="44" id="ARQ-Gv-nkJ"/>
+                            <constraint firstAttribute="trailing" secondItem="BZ8-lS-lTm" secondAttribute="trailing" id="Hzr-La-rIc"/>
+                            <constraint firstItem="IDg-cl-TNe" firstAttribute="leading" secondItem="0em-Nj-c59" secondAttribute="leading" constant="11" id="M11-tf-kYA"/>
+                            <constraint firstItem="BZ8-lS-lTm" firstAttribute="top" secondItem="0em-Nj-c59" secondAttribute="top" constant="69" id="VWs-K6-cpd"/>
+                            <constraint firstItem="BZ8-lS-lTm" firstAttribute="top" secondItem="IDg-cl-TNe" secondAttribute="bottom" constant="5" id="dLm-5b-Wdz"/>
+                            <constraint firstItem="BZ8-lS-lTm" firstAttribute="leading" secondItem="0em-Nj-c59" secondAttribute="leading" id="gpP-Z2-02F"/>
+                            <constraint firstAttribute="bottom" secondItem="BZ8-lS-lTm" secondAttribute="bottom" id="p10-uh-d6G"/>
+                        </constraints>
                     </view>
                 </viewController>
             </objects>
@@ -784,8 +908,8 @@
             <objects>
                 <splitViewController id="JOK-Ji-HfK" customClass="RightSplitViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem id="3Ua-Or-JYr"/>
-                        <splitViewItem id="DSe-hq-Yy5"/>
+                        <splitViewItem holdingPriority="200" id="3Ua-Or-JYr"/>
+                        <splitViewItem holdingPriority="300" id="DSe-hq-Yy5"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="dFk-8N-bnq">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -861,10 +985,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="NSAdvanced" width="32" height="32"/>
         <image name="bottom" width="50" height="50"/>
+        <image name="click" width="64" height="64"/>
         <image name="left" width="50" height="50"/>
         <image name="open" width="50" height="50"/>
+        <image name="pan" width="64" height="64"/>
         <image name="right" width="50" height="50"/>
+        <image name="rotate" width="50" height="50"/>
         <image name="screenshot" width="50" height="50"/>
     </resources>
 </document>
