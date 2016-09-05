@@ -720,7 +720,7 @@
                                     <size key="minSize" width="100" height="22"/>
                                     <size key="maxSize" width="500" height="22"/>
                                     <textField key="view" verticalHuggingPriority="750" id="e0H-rr-5ZW" customClass="ToolbarTextField" customModule="Geo3DMLViewer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="14" width="280" height="22"/>
+                                        <rect key="frame" x="0.0" y="14" width="270" height="22"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" drawsBackground="YES" id="zLL-Rf-tTZ">
                                             <font key="font" metaFont="system"/>
@@ -773,7 +773,7 @@
             <objects>
                 <splitViewController storyboardIdentifier="LeftSplitView" id="kew-Zo-ycZ" customClass="LeftSplitViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
-                        <splitViewItem holdingPriority="500" id="yze-lk-4Kh"/>
+                        <splitViewItem holdingPriority="400" id="yze-lk-4Kh"/>
                         <splitViewItem holdingPriority="200" id="DSH-KE-xjM"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="oGH-TD-0UM">
@@ -802,11 +802,11 @@
             </objects>
             <point key="canvasLocation" x="1485" y="1343"/>
         </scene>
-        <!--Outline View Controller-->
+        <!--Left View Controller-->
         <scene sceneID="CgZ-aT-I10">
             <objects>
                 <customObject id="hRp-Rj-Fs3" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <viewController id="rTf-5Q-J6J" customClass="OutlineViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="rTf-5Q-J6J" customClass="LeftViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="0em-Nj-c59">
                         <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -827,14 +827,14 @@
                                     <rect key="frame" x="1" y="1" width="198" height="229"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="16" outlineTableColumn="dQd-lW-FkO" id="QMq-mv-8h7">
+                                        <outlineView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" columnReordering="NO" multipleSelection="NO" autosaveColumns="NO" rowSizeStyle="automatic" viewBased="YES" indentationPerLevel="5" outlineTableColumn="dQd-lW-FkO" id="QMq-mv-8h7">
                                             <rect key="frame" x="0.0" y="0.0" width="198" height="0.0"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <size key="intercellSpacing" width="3" height="2"/>
                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <color key="gridColor" name="gridColor" catalog="System" colorSpace="catalog"/>
                                             <tableColumns>
-                                                <tableColumn width="195" minWidth="40" maxWidth="1000" id="dQd-lW-FkO">
+                                                <tableColumn identifier="ModelCell" width="195" minWidth="40" maxWidth="1000" id="dQd-lW-FkO">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
@@ -872,6 +872,10 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <outlet property="dataSource" destination="rTf-5Q-J6J" id="Dv0-8b-V3S"/>
+                                                <outlet property="delegate" destination="rTf-5Q-J6J" id="O9G-Um-JbQ"/>
+                                            </connections>
                                         </outlineView>
                                     </subviews>
                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -909,7 +913,7 @@
                 <splitViewController id="JOK-Ji-HfK" customClass="RightSplitViewController" customModule="Geo3DMLViewer" customModuleProvider="target" sceneMemberID="viewController">
                     <splitViewItems>
                         <splitViewItem holdingPriority="200" id="3Ua-Or-JYr"/>
-                        <splitViewItem holdingPriority="300" id="DSe-hq-Yy5"/>
+                        <splitViewItem holdingPriority="400" id="DSe-hq-Yy5"/>
                     </splitViewItems>
                     <splitView key="splitView" dividerStyle="thin" vertical="YES" id="dFk-8N-bnq">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
@@ -950,11 +954,14 @@
             <objects>
                 <viewController id="GZ3-bl-1kw" sceneMemberID="viewController">
                     <view key="view" id="2MW-A0-g6K">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="400"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <sceneView translatesAutoresizingMaskIntoConstraints="NO" id="Z9k-m2-5hn">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="400"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="iYv-qw-oAC"/>
+                                </constraints>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </sceneView>
                         </subviews>
