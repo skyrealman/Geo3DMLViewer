@@ -26,6 +26,8 @@
 		F8B65A971D77D94C00827D0C /* Gml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8F1D77D94C00827D0C /* Gml.swift */; };
 		F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A901D77D94C00827D0C /* GeoSRS.swift */; };
 		F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A9A1D7816CD00827D0C /* Base.swift */; };
+		F8F61BB31D7EA5D200517374 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F61BB21D7EA5D200517374 /* Node.swift */; };
+		F8F61BB51D7EA62400517374 /* SearchableOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F61BB41D7EA62400517374 /* SearchableOutlineView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,8 @@
 		F8B65A8F1D77D94C00827D0C /* Gml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gml.swift; sourceTree = "<group>"; };
 		F8B65A901D77D94C00827D0C /* GeoSRS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoSRS.swift; sourceTree = "<group>"; };
 		F8B65A9A1D7816CD00827D0C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		F8F61BB21D7EA5D200517374 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		F8F61BB41D7EA62400517374 /* SearchableOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableOutlineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				125203131D7BCA0300013672 /* ToolbarTextField.swift */,
+				F8F61BB41D7EA62400517374 /* SearchableOutlineView.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			children = (
 				12DC87541D79D65E006511B4 /* SplitViewController.swift */,
 				12DC87561D79D926006511B4 /* WindowController.swift */,
+				F8F61BB21D7EA5D200517374 /* Node.swift */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -321,11 +327,13 @@
 				F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */,
 				12DC87571D79D926006511B4 /* WindowController.swift in Sources */,
 				F8B65A951D77D94C00827D0C /* GeoFeature.swift in Sources */,
+				F8F61BB51D7EA62400517374 /* SearchableOutlineView.swift in Sources */,
 				F8B65A881D77D93600827D0C /* Geo3DMap.swift in Sources */,
 				F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */,
 				F8B65A921D77D94C00827D0C /* Geo3DModel.swift in Sources */,
 				F8B65A961D77D94C00827D0C /* geometry.swift in Sources */,
 				F8B65A941D77D94C00827D0C /* Geo3DProject.swift in Sources */,
+				F8F61BB31D7EA5D200517374 /* Node.swift in Sources */,
 				12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */,
 				F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */,
 				F8B65A971D77D94C00827D0C /* Gml.swift in Sources */,
