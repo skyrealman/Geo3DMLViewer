@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import SceneKit
 //import SearchableOutlineView
 class LeftSplitViewController: NSSplitViewController {
 
@@ -34,6 +35,7 @@ class RightSplitViewController: NSSplitViewController{
 }
 
 class CenterSplitViewController: NSSplitViewController{
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         splitView.delegate = self
@@ -42,6 +44,44 @@ class CenterSplitViewController: NSSplitViewController{
         super.viewWillAppear()
         splitView.setPosition(4.0 * view.bounds.height / 5.0, ofDividerAtIndex: 0)
     }
+}
+
+class TopViewController: NSViewController{
+    
+    @IBOutlet weak var scnView: SCNView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.wantsLayer = true
+    }
+    override func viewWillAppear() {
+    }
+}
+class BottomViewController: NSViewController{
+    var log: Int = 1
+    @IBOutlet var nsView: NSView!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.wantsLayer = true
+    }
+    override func viewWillAppear() {
+        nsView.layer?.backgroundColor = NSColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1).CGColor
+    }
+    
+    @IBAction func showLogField(sender: NSButton) {
+        let centerSplitViewController = self.parentViewController as! NSSplitViewController
+        if(log == 1){
+            sender.image = NSImage(named: "bottom_up")
+            log = 0
+            centerSplitViewController.splitView.setPosition(centerSplitViewController.splitView.bounds.height, ofDividerAtIndex: 0)
+            //centerSplitview.setPosition(0, ofDividerAtIndex: 0)
+        }else if(log == 0){
+            sender.image = NSImage(named: "bottom_down")
+            log = 1
+            centerSplitViewController.splitView.setPosition(4 * centerSplitViewController.splitView.bounds.height/5, ofDividerAtIndex: 0)
+        }
+        
+    }
+ 
 }
 
 class LeftViewController: NSViewController, NSSearchFieldDelegate {
