@@ -18,7 +18,7 @@ class LeftSplitViewController: NSSplitViewController {
     }
     override func viewWillAppear() {
         super.viewWillAppear()
-        splitView.setPosition(view.bounds.width / 6.0, ofDividerAtIndex: 0)
+        splitView.setPosition(view.bounds.width / 6.0, ofDividerAt: 0)
     }
 
 }
@@ -30,7 +30,7 @@ class RightSplitViewController: NSSplitViewController{
     }
     override func viewWillAppear() {
         super.viewWillAppear()
-        splitView.setPosition(4.0 * view.bounds.width / 5.0, ofDividerAtIndex: 0)
+        splitView.setPosition(4.0 * view.bounds.width / 5.0, ofDividerAt: 0)
     }
 }
 
@@ -42,7 +42,7 @@ class CenterSplitViewController: NSSplitViewController{
     }
     override func viewWillAppear() {
         super.viewWillAppear()
-        splitView.setPosition(4.0 * view.bounds.height / 5.0, ofDividerAtIndex: 0)
+        splitView.setPosition(4.0 * view.bounds.height / 5.0, ofDividerAt: 0)
     }
 }
 
@@ -64,20 +64,20 @@ class BottomViewController: NSViewController{
         self.view.wantsLayer = true
     }
     override func viewWillAppear() {
-        nsView.layer?.backgroundColor = NSColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1).CGColor
+        nsView.layer?.backgroundColor = NSColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1).cgColor
     }
     
-    @IBAction func showLogField(sender: NSButton) {
-        let centerSplitViewController = self.parentViewController as! NSSplitViewController
+    @IBAction func showLogField(_ sender: NSButton) {
+        let centerSplitViewController = self.parent as! NSSplitViewController
         if(log == 1){
             sender.image = NSImage(named: "bottom_up")
             log = 0
-            centerSplitViewController.splitView.setPosition(centerSplitViewController.splitView.bounds.height, ofDividerAtIndex: 0)
+            centerSplitViewController.splitView.setPosition(centerSplitViewController.splitView.bounds.height, ofDividerAt: 0)
             //centerSplitview.setPosition(0, ofDividerAtIndex: 0)
         }else if(log == 0){
             sender.image = NSImage(named: "bottom_down")
             log = 1
-            centerSplitViewController.splitView.setPosition(4 * centerSplitViewController.splitView.bounds.height/5, ofDividerAtIndex: 0)
+            centerSplitViewController.splitView.setPosition(4 * centerSplitViewController.splitView.bounds.height/5, ofDividerAt: 0)
         }
         
     }
@@ -96,18 +96,18 @@ class LeftViewController: NSViewController, NSSearchFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
-        self.outlineView?.setDelegate(self)
+        self.outlineView?.delegate = self
         self.searchField?.delegate = self
         
         self.nodes = []
         self.selectionIndexPaths = []
         self.renderTreeFromObjects(outlineContents, rootNode: nil)
     }
-    func control(control: NSControl, textView: NSTextView, doCommandBySelector commandSelector: Selector) -> Bool {
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         print("FocusDelegate")
         if commandSelector == #selector(NSResponder.cancelOperation(_:)){
             searchField.stringValue = ""
-            self.treeController.content?.removeAllObjects()
+            (self.treeController.content as AnyObject?)?.removeAllObjects()
             self.treeController.rearrangeObjects()
             self.renderTreeFromObjects(outlineContents, rootNode: nil)
             control.abortEditing()
@@ -125,10 +125,10 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
         let value: [String] = [ModelType.Drill.rawValue, ModelType.Section.rawValue, ModelType.Map3D.rawValue, ModelType.Isogram.rawValue, ModelType.Other.rawValue]
         return ["工作空间": value]
     }
-    func searchFieldDidEndSearching(sender: NSSearchField) {
+    func searchFieldDidEndSearching(_ sender: NSSearchField) {
         Swift.print("开始查询...")
     }
-    override func controlTextDidChange(obj: NSNotification) {
+    override func controlTextDidChange(_ obj: Notification) {
         if let searchField = obj.object as? NSSearchField{
             if searchField.stringValue.characters.count >= 2 {
                 Swift.print("查询：\(searchField.stringValue)...")
@@ -149,8 +149,8 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
 //    func outlineView(outlineView: NSOutlineView, child index: Int, ofItem item: AnyObject?) -> AnyObject {
 //        return childrenForItem(item)[index]
 //    }
-    func outlineView(outlineView: NSOutlineView, shouldExpandItem item: AnyObject) -> Bool {
-        let node = item.representedObject as! BaseNode
+    func outlineView(_ outlineView: NSOutlineView, shouldExpandItem item: Any) -> Bool {
+        let node = (item as AnyObject).representedObject as! BaseNode
         if node.parentNode() == nil{
             return true
         }else if node.parentNode()?.parentNode() == nil && node.parentNode() != nil{
@@ -163,12 +163,12 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
 //        //print(childrenForItem(item).count)
 //        return childrenForItem(item).count
 //    }
-    func outlineView(outlineView: NSOutlineView, isGroupItem item: AnyObject) -> Bool{
+    func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool{
         return false
     }
-    func outlineView(outlineView: NSOutlineView, viewForTableColumn: NSTableColumn?, item: AnyObject) -> NSView?{
-        let resultTextField = self.outlineView.makeViewWithIdentifier("ModelCell", owner: nil) as! NSTableCellView
-        let node = item.representedObject as! BaseNode
+    func outlineView(_ outlineView: NSOutlineView, viewFor viewForTableColumn: NSTableColumn?, item: Any) -> NSView?{
+        let resultTextField = self.outlineView.make(withIdentifier: "ModelCell", owner: nil) as! NSTableCellView
+        let node = (item as AnyObject).representedObject as! BaseNode
         if let title = node.nodeTitle{
             resultTextField.textField?.stringValue = title
         }else{
@@ -187,7 +187,7 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
         return resultTextField
         
     }
-    func renderTreeFromObjects(entries: Dictionary<String, [String]>, rootNode: BaseNode?){
+    func renderTreeFromObjects(_ entries: Dictionary<String, [String]>, rootNode: BaseNode?){
         for entry in entries{
             let groupName = entry.0
             let groupEntries = entry.1
@@ -197,7 +197,7 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
             
             if rootNode != nil{
                 groupNode.parent = rootNode
-                rootNode?.children.addObject(groupNode)
+                rootNode?.children.add(groupNode)
                 self.treeController.addChild(groupNode)
             }else{
                 self.treeController.addObject(groupNode)
@@ -208,7 +208,7 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
                 let node = BaseNode()
                 node.nodeTitle = groupEntry
                 node.parent = groupNode
-                groupNode.children.addObject(node)
+                groupNode.children.add(node)
                 //self.treeController.addChild(groupNode)
                 self.treeController.rearrangeObjects()
             }

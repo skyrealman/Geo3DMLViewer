@@ -7,7 +7,7 @@
 //
 
 import Cocoa
-class BaseNode: NSObject, SearchableNode{
+@objc class BaseNode: NSObject, SearchableNode{
     var nodeTitle: String? = nil
     var url: String? = nil
     var children: NSMutableArray = NSMutableArray()

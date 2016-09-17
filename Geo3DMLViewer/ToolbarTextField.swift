@@ -14,9 +14,9 @@ class ToolbarTextField: NSTextField {
     var inProgress: Bool = false{
         didSet{
             self.needsDisplay = true
-            self.button.hidden = !self.inProgress
+            self.button.isHidden = !self.inProgress
             self.button.needsDisplay = true
-            self.button.enabled = true
+            self.button.isEnabled = true
         }
     }
     var progress: CGFloat = CGFloat(0.0) {
@@ -34,15 +34,15 @@ class ToolbarTextField: NSTextField {
     override func awakeFromNib() {
         let buttonFrame = NSMakeRect(0.0, 0.0, 16.0, 16.0)
         self.button = NSButton(frame: buttonFrame)
-        self.button.setButtonType(NSButtonType.MomentaryChangeButton)
-        self.button.bezelStyle = NSBezelStyle.RegularSquareBezelStyle
-        self.button.bordered = false
-        self.button.imagePosition = NSCellImagePosition.ImageOnly
+        self.button.setButtonType(NSButtonType.momentaryChange)
+        self.button.bezelStyle = NSBezelStyle.regularSquare
+        self.button.isBordered = false
+        self.button.imagePosition = NSCellImagePosition.imageOnly
         self.button.image = NSImage(named: NSImageNameStopProgressFreestandingTemplate)
-        self.button.hidden = !self.inProgress
+        self.button.isHidden = !self.inProgress
     }
-    override func drawRect(dirtyRect: NSRect) {
-        super.drawRect(dirtyRect)
+    override func draw(_ dirtyRect: NSRect) {
+        super.draw(dirtyRect)
         
         if self.inProgress{
             let buttonFrame = NSMakeRect(self.bounds.size.width - 22, ceil((self.bounds.size.height / 2) - 9), 16.0, 16.0)
@@ -51,8 +51,8 @@ class ToolbarTextField: NSTextField {
             progressRect.origin.y = progressRect.size.height - 4
             progressRect.size.height = 2
             progressRect.size.width *= self.progress
-            NSColor.alternateSelectedControlColor().set()
-            NSRectFillUsingOperation(progressRect, NSCompositingOperation.CompositeSourceIn)
+            NSColor.alternateSelectedControlColor.set()
+            NSRectFillUsingOperation(progressRect, NSCompositingOperation.sourceIn)
         }
     }
     

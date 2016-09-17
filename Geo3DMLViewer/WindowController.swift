@@ -17,12 +17,12 @@ class WindowController: NSWindowController {
     override func windowDidLoad() {
         super.windowDidLoad()
         //self.resize(800, 500)
-        self.window?.setFrame(NSScreen.mainScreen()!.visibleFrame, display: true, animate: true)
-        self.window?.titleVisibility = NSWindowTitleVisibility.Hidden
-        self.window?.opaque = false
+        self.window?.setFrame(NSScreen.main()!.visibleFrame, display: true, animate: true)
+        self.window?.titleVisibility = NSWindowTitleVisibility.hidden
+        self.window?.isOpaque = false
         self.window?.backgroundColor = NSColor(red: 211, green: 212, blue: 212, alpha: 0.95)
     }
-    func resize(width: Float, _ height: Float){
+    func resize(_ width: Float, _ height: Float){
         var windowFrame = window?.frame
         let oldWidth = windowFrame!.size.width
         let oldHeight = windowFrame!.size.height
@@ -31,7 +31,7 @@ class WindowController: NSWindowController {
     }
 
 
-    @IBAction func sideControl(sender: AnyObject) {
+    @IBAction func sideControl(_ sender: AnyObject) {
         let segment = sender.selectedSegment
         
         let leftSplitViewController = self.window?.contentViewController as! NSSplitViewController
@@ -41,10 +41,10 @@ class WindowController: NSWindowController {
         if(segment == 0){
             switch leftPanelFig {
             case 1:
-                leftSplitViewController.splitViewItems[0].animator().collapsed = true
+                leftSplitViewController.splitViewItems[0].animator().isCollapsed = true
                 leftPanelFig = 0
             case 0:
-                leftSplitViewController.splitViewItems[0].animator().collapsed = false
+                leftSplitViewController.splitViewItems[0].animator().isCollapsed = false
                 leftPanelFig = 1
             default: break
                 
@@ -52,20 +52,20 @@ class WindowController: NSWindowController {
         }else if(segment == 2){
             switch rightPanelFig {
             case 1:
-                rightSplitViewController.splitViewItems[1].animator().collapsed = true
+                rightSplitViewController.splitViewItems[1].animator().isCollapsed = true
                 rightPanelFig = 0
             case 0:
-                rightSplitViewController.splitViewItems[1].animator().collapsed = false
+                rightSplitViewController.splitViewItems[1].animator().isCollapsed = false
                 rightPanelFig = 1
             default: break
             }
         }else if(segment == 1){
             switch bottomPanelFig {
             case 1:
-                centerSplitViewController.splitViewItems[1].animator().collapsed = true
+                centerSplitViewController.splitViewItems[1].animator().isCollapsed = true
                 bottomPanelFig = 0
             case 0:
-                centerSplitViewController.splitViewItems[1].animator().collapsed = false
+                centerSplitViewController.splitViewItems[1].animator().isCollapsed = false
                 bottomPanelFig = 1
             default:
                 break
