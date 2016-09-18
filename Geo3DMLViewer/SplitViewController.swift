@@ -56,17 +56,29 @@ class TopViewController: NSViewController{
     override func viewWillAppear() {
     }
 }
-class BottomViewController: NSViewController{
+class BottomViewController: NSViewController, NSTextViewDelegate{
     var log: Int = 1
     @IBOutlet var nsView: NSView!
+    
+    @IBOutlet var textView: NSTextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.string = ""
+        textView.delegate = self
+        Logger.instance.addObserver(self, forKeyPath: "logMessageArray", options: NSKeyValueObservingOptions.new, context: nil)
         self.view.wantsLayer = true
     }
     override func viewWillAppear() {
         nsView.layer?.backgroundColor = NSColor(red: 241/255, green: 241/255, blue: 241/255, alpha: 1).cgColor
     }
-    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "logMessageArray" {
+            if let logMessage = change?[NSKeyValueChangeKey.newKey] as? [String]{
+                self.textView?.string = logMessage.joined(separator: "")
+            }
+        }
+    }
     @IBAction func showLogField(_ sender: NSButton) {
         let centerSplitViewController = self.parent as! NSSplitViewController
         if(log == 1){
@@ -104,7 +116,7 @@ class LeftViewController: NSViewController, NSSearchFieldDelegate {
         self.renderTreeFromObjects(outlineContents, rootNode: nil)
     }
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
-        print("FocusDelegate")
+        //print("FocusDelegate")
         if commandSelector == #selector(NSResponder.cancelOperation(_:)){
             searchField.stringValue = ""
             (self.treeController.content as AnyObject?)?.removeAllObjects()
@@ -131,7 +143,7 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
     override func controlTextDidChange(_ obj: Notification) {
         if let searchField = obj.object as? NSSearchField{
             if searchField.stringValue.characters.count >= 2 {
-                Swift.print("查询：\(searchField.stringValue)...")
+                Logger.shareLogger().debug(items: "查询：\(searchField.stringValue)...")
                 try! self.outlineView.filterNodesTree(withString: searchField.stringValue)
             }
             if searchField.stringValue.characters.count == 0{
@@ -191,7 +203,7 @@ extension LeftViewController: NSOutlineViewDataSource, NSOutlineViewDelegate{
         for entry in entries{
             let groupName = entry.0
             let groupEntries = entry.1
-            print(groupEntries)
+            //print(groupEntries)
             let groupNode = BaseNode()
             groupNode.nodeTitle = groupName
             

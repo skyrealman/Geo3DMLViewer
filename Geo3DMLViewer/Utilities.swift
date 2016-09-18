@@ -7,12 +7,3 @@
 //
 
 import Cocoa
-
-internal extension String{
-    var lastPathComponent: String{
-        return NSString(string: self).lastPathComponent
-    }
-    func withColor(color: String) -> String{
-        return "\u{001b}[fg\(color);\(self)\u{001b}[;"
-    }
-}

@@ -53,13 +53,21 @@ public class Formatter: Formatters{
         return String(format: format, arguments: arguments) + terminator
     }
 }
-public extension Formatter{
+extension Formatter{
     func format(date: Date, dateFormat: String) -> String{
          dateFormatter.dateFormat = dateFormat
         return dateFormatter.string(from: date)
     }
     func format(level: Level) -> String{
         let text = level.description
-        return text.withColor(color: "#333333")
+
+        return text
     }
+}
+extension Formatters{
+    public static let Default = Formatter("[%@] %@: %@", [
+        .Date("yyyy-MM-dd HH:mm:ss.SSS"),
+        .Level,
+        .Message
+    ])
 }
