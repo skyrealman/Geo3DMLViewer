@@ -9,7 +9,7 @@
 import Cocoa
 
 class ToolbarTextField: NSTextField {
-
+    
     var button = NSButton()
     var inProgress: Bool = false{
         didSet{

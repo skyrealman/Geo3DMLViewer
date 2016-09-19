@@ -11,8 +11,7 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -32,10 +31,31 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         openDialog.allowedFileTypes = ["xml"]
         
         if(openDialog.runModal() == NSModalResponseOK){
+            
             let result = openDialog.url
             if(result != nil){
-                let path = result?.path
+                let path = result!.path
+                let name = result!.lastPathComponent
                 Logger.instance.debug(items: path)
+                
+                var progressbar = NSApplication.shared().mainWindow?.toolbar?.items[4].view as! ToolbarTextField
+                progressbar.stringValue = " 打开 | \(name) 模型文件"
+                progressbar.inProgress = true
+                //progressbar.progress = 50.0
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(4)) {
+                    progressbar.progress = 0.1
+                    Logger.instance.debug(items: progressbar)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(6)) {
+                    progressbar.progress = 0.5
+                    Logger.instance.debug(items: progressbar)
+                }
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(8)) {
+                    progressbar.progress = 1.0
+                    progressbar.inProgress = false
+                    Logger.instance.debug(items: progressbar)
+                }
+                
                 
             }
         }else{
