@@ -21,6 +21,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
+    @IBAction func openEvent(_ sender: AnyObject) {
+        let openDialog = NSOpenPanel()
+        openDialog.title = "打开三维模型"
+        openDialog.showsResizeIndicator = true
+        openDialog.showsHiddenFiles = false
+        openDialog.canChooseDirectories = false
+        openDialog.canCreateDirectories = false
+        openDialog.allowsMultipleSelection = false
+        openDialog.allowedFileTypes = ["xml"]
+        
+        if(openDialog.runModal() == NSModalResponseOK){
+            let result = openDialog.url
+            if(result != nil){
+                let path = result?.path
+                Logger.instance.debug(items: path)
+                
+            }
+        }else{
+            return
+        }
+    }
 
 }
 

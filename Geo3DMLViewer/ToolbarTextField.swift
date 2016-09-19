@@ -28,7 +28,7 @@ class ToolbarTextField: NSTextField {
     var viewController: NSViewController? = nil{
         didSet{
             self.button.target = self.viewController
-            self.button.action = Selector("cancelLoadingButtonClicked:")
+            self.button.action = Selector(("cancelLoadingButtonClicked:"))
         }
     }
     override func awakeFromNib() {
@@ -40,6 +40,8 @@ class ToolbarTextField: NSTextField {
         self.button.imagePosition = NSCellImagePosition.imageOnly
         self.button.image = NSImage(named: NSImageNameStopProgressFreestandingTemplate)
         self.button.isHidden = !self.inProgress
+        
+        self.addSubview(self.button)
     }
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
