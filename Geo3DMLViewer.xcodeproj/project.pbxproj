@@ -13,6 +13,7 @@
 		127CEF311D8C3C9B00BE5F22 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CEF301D8C3C9B00BE5F22 /* Logger.swift */; };
 		12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87541D79D65E006511B4 /* SplitViewController.swift */; };
 		12DC87571D79D926006511B4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87561D79D926006511B4 /* WindowController.swift */; };
+		F81920861D91255800324296 /* ModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81920851D91255800324296 /* ModelAdapter.swift */; };
 		F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5A1D77D76600827D0C /* AppDelegate.swift */; };
 		F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5C1D77D76600827D0C /* ViewController.swift */; };
 		F8B65A5F1D77D76600827D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B65A5E1D77D76600827D0C /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 		127CEF301D8C3C9B00BE5F22 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		12DC87541D79D65E006511B4 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		12DC87561D79D926006511B4 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		F81920851D91255800324296 /* ModelAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelAdapter.swift; sourceTree = "<group>"; };
 		F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo3DMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B65A5A1D77D76600827D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B65A5C1D77D76600827D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				127CEF301D8C3C9B00BE5F22 /* Logger.swift */,
 				1250AC591D8C4FAF000FB090 /* Formatter.swift */,
 				1250AC5B1D8C5E48000FB090 /* Utilities.swift */,
+				F81920851D91255800324296 /* ModelAdapter.swift */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -354,6 +357,7 @@
 				F8B65A921D77D94C00827D0C /* Geo3DModel.swift in Sources */,
 				F8B65A961D77D94C00827D0C /* geometry.swift in Sources */,
 				F8B65A941D77D94C00827D0C /* Geo3DProject.swift in Sources */,
+				F81920861D91255800324296 /* ModelAdapter.swift in Sources */,
 				F8F61BB31D7EA5D200517374 /* Node.swift in Sources */,
 				127CEF311D8C3C9B00BE5F22 /* Logger.swift in Sources */,
 				12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */,

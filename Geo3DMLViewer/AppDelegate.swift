@@ -12,6 +12,8 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     
+    @IBOutlet weak var openItem: NSMenuItem!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -19,8 +21,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
-
-    @IBAction func openEvent(_ sender: AnyObject) {
+    
+    @IBAction func openItemEvent(_ sender: AnyObject) {
         let openDialog = NSOpenPanel()
         openDialog.title = "打开三维模型"
         openDialog.showsResizeIndicator = true
@@ -38,7 +40,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 let name = result!.lastPathComponent
                 Logger.instance.debug(items: path)
                 
-                var progressbar = NSApplication.shared().mainWindow?.toolbar?.items[4].view as! ToolbarTextField
+                let progressbar = NSApplication.shared().mainWindow?.toolbar?.items[4].view as! ToolbarTextField
                 progressbar.stringValue = " 打开 | \(name) 模型文件"
                 progressbar.inProgress = true
                 //progressbar.progress = 50.0
@@ -56,12 +58,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     Logger.instance.debug(items: progressbar)
                 }
                 
-                
             }
         }else{
             return
         }
-    }
 
+    }
 }
 
