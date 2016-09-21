@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dict xmlns:geo3dml="http://www.cgs.gov.cn/geo3dml" xmlns="http://www.cgs.gov.cn/geo3dml"
+	xmlns:gml="http://www.opengis.net/gml/3.2"
+	xmlns:gmlcov="http://www.opengis.net/gml/3.2"
+	xmlns:swe="http://www.opengis.net/swe/2.0"
+	xmlns:ogc="http://www.opengis.net/ogc"
+	xmlns:se="http://www.opengis.net/se"
+	xmlns:gsml="http://xmlns.geosciml.org/GeoSciML-Core/3.0"
+	xmlns:gsmlst="http://xmlns.geosciml.org/GeologicStructure/3.0"
+	xmlns:gsmlgu="http://xmlns.geosciml.org/GeologicUnit/3.0"
+	xmlns:xlink="http://www.w3.org/1999/xlink"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.cgs.gov.cn/GMML file:/E:/GMML/docs/schema/GeoMap.xsd">
+	<geo3dml:Geo3DProject>
+		<geo3dml:Name Sel="0" Nval="1" Num="1"></geo3dml:Name>
+		<geo3dml:Description Sel="1" Nval="1" Num="2"></geo3dml:Description>
+		<geo3dml:Models Sel="1" Nval="1" Num="2"></geo3dml:Models>
+		<geo3dml:Maps Sel="1" Nval="1" Num="2"></geo3dml:Maps>
+	</geo3dml:Geo3DProject>
+	<geo3dml:Models>
+		<geo3dml:Model Sel="0" Nval="1" Num="4"></geo3dml:Model>
+	</geo3dml:Models>
+	<geo3dml:Maps>
+		<geo3dml:Map Sel="0" Nval="1" Num="4"></geo3dml:Map>
+	</geo3dml:Maps>
+	<geo3dml:GeoModel>
+		<geo3dml:Name Sel="0" Nval="1" Num="1"></geo3dml:Name>
+		<geo3dml:Type Sel="0" Nval="1" Num="1"></geo3dml:Type>
+		<geo3dml:Metadate Sel="1" Nval="0" Num="2"></geo3dml:Metadate>
+		<geo3dml:FeatureClasses Sel="1" Nval="0" Num="2"></geo3dml:FeatureClasses>
+		<geo3dml:FeatureRelationship Sel="1" Nval="0" Num="2"></geo3dml:FeatureRelationship>
+	</geo3dml:GeoModel>
+	<geo3dml:FeatureClasses>
+		<geo3dml:FeatureClass Sel="0" Nval="1" Num="4"></geo3dml:FeatureClass>
+	</geo3dml:FeatureClasses>
+	<geo3dml:FeatureClass>
+		<geo3dml:GeoFeatureClass Sel="0" Nval="1" Num="4"></geo3dml:GeoFeatureClass>
+	</geo3dml:FeatureClass>
+	<geo3dml:FeatureRelationship>
+		<geo3dml:Relation Sel="0" Nval="1" Num="4"></geo3dml:Relation>
+	</geo3dml:FeatureRelationship>
+	<geo3dml:GeoFeatureRelation>
+		<Relationship Sel="1" Nval="0" Num="2"/>
+		<Source Sel="0" Nval="1" Num="1"/>
+		<Targets Sel="0" Nval="1" Num="1"/>
+	</geo3dml:GeoFeatureRelation>
+	<Source>
+		<Feature Sel="1" Nval="0" Num="2"/>
+		<Role Sel="1" Nval="0" Num="2"/>
+	</Source>
+	<Targets>
+		<Feature Sel="1" Nval="1" Num="3"/>
+		<Role Sel="1" Nval="0" Num="2"/>
+	</Targets>
+	<geo3dml:GeoFeatureClass>
+		<geo3dml:Schema Sel="0" Nval="1" Num="1"></geo3dml:Schema>
+		<geo3dml:Features Sel="0" Nval="1" Num="1"></geo3dml:Features>
+	</geo3dml:GeoFeatureClass>
+	<geo3dml:Features>
+		<geo3dml:Feature Sel="0" Nval="1" Num="4"></geo3dml:Feature>
+	</geo3dml:Features>
+	<geo3dml:Geo3DMap>
+		<geo3dml:Name Sel="0" Nval="1" Num="1"></geo3dml:Name>
+		<geo3dml:Description Sel="0" Nval="1" Num="1"></geo3dml:Description>
+		<geo3dml:Layers Sel="1" Nval="1" Num="2"></geo3dml:Layers>
+	</geo3dml:Geo3DMap>
+	<geo3dml:Layers>
+		<geo3dml:Layer Sel="0" Nval="1" Num="4"></geo3dml:Layer>
+	</geo3dml:Layers>
+	<geo3dml:Geo3DLayer>
+		<geo3dml:FeatureClass Sel="1" Nval="0" Num="2"></geo3dml:FeatureClass>
+		<geo3dml:Styles Sel="1" Nval="0" Num="2"></geo3dml:Styles>
+	</geo3dml:Geo3DLayer>
+	<geo3dml:Styles>
+		<geo3dml:Style Sel="0" Nval="1" Num="4"></geo3dml:Style>
+	</geo3dml:Styles>
+	<geo3dml:GeoFeature>
+		<swe:Fields Sel="1" Nval="0" Num="2"/>
+		<se:Geometry Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoFeature>
+	<swe:Fields>
+		<swe:Field Sel="0" Nval="1" Num="4"/>
+	</swe:Fields>
+	<geo3dml:Geometry>
+		<gml:Shape Sel="0" Nval="1" Num="1"/>
+		<ShapeProperty Sel="1" Nval="1" Num="3"/>
+	</geo3dml:Geometry>
+	<geo3dml:GeoSurfaceSymbolizer>
+		<se:Geometry Sel="1" Nval="0" Num="2"/>
+		<Front Sel="0" Nval="1" Num="1"/>
+		<Back Sel="1" Nval="0" Num="2"/>
+		<VertexSymbolizer Sel="1" Nval="0" Num="2"/>
+		<FrameSymbolizer Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoSurfaceSymbolizer>
+	<Front>
+		<Material Sel="1" Nval="0" Num="2"/>
+		<AbstractTexture Sel="1" Nval="0" Num="2"/>
+	</Front>
+	<Back>
+		<Material Sel="1" Nval="0" Num="2"/>
+		<AbstractTexture Sel="1" Nval="0" Num="2"/>
+	</Back>
+	<geo3dml:Geo3DStyleLib>
+		<geo3dml:Name Sel="0" Nval="1" Num="1"></geo3dml:Name>
+		<geo3dml:FeatureTypeStyleLib Sel="1" Nval="0" Num="2"/>
+		<geo3dml:CoverageStyleLib Sel="1" Nval="0" Num="2"/>
+		<geo3dml:SymbolizerLib Sel="1" Nval="0" Num="2"/>
+	</geo3dml:Geo3DStyleLib>
+	<geo3dml:FeatureTypeStyleLib>
+		<se:FeatureTypeStyle Sel="1" Nval="1" Num="3"/>
+	</geo3dml:FeatureTypeStyleLib>
+	<geo3dml:CoverageStyleLib>
+		<se:CoverageStyle Sel="1" Nval="1" Num="3"/>
+	</geo3dml:CoverageStyleLib>
+	<geo3dml:SymbolizerLib>
+		<se:Symbolizer Sel="1" Nval="1" Num="3"/>
+	</geo3dml:SymbolizerLib>
+	 <geo3dml:MultiCurve>
+       <geo3dml:curveMember>
+	   </geo3dml:curveMember>
+     </geo3dml:MultiCurve>
+	 <geo3dml:curveMember>
+        <geo3dml:LineString>
+		</geo3dml:LineString>
+	 </geo3dml:curveMember>
+	 <geo3dml:LineString>
+        <gml:posList Sel="1" Nval="0"/>
+	 </geo3dml:LineString>
+	  <geo3dml:MultiPoint>
+       <geo3dml:pointMember>
+	   </geo3dml:pointMember>
+     </geo3dml:MultiPoint>
+	 <geo3dml:pointMember>
+        <geo3dml:Point>
+		</geo3dml:Point>
+	 </geo3dml:pointMember>
+	 <geo3dml:Point>
+        <geo3dml:pos Sel="0">
+		</geo3dml:pos>
+	 </geo3dml:Point>
+	<geo3dml:GeoTin>
+		<geo3dml:Vertices Sel="0" Nval="1" Num="1"/>
+		<geo3dml:Triangles  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoTin>
+	<geo3dml:Vertices>
+		<Vertex Sel="0" Nval="1" Num="4"/>
+	</geo3dml:Vertices>
+	<Triangles>
+		<geo3dml:Triangle  Sel="0" Nval="1" Num="4"/>
+	</Triangles>
+	<geo3dml:Triangle>
+		<VertexList  Sel="0" Nval="1" Num="1"/>
+		<NeighborList  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:Triangle>
+	<geo3dml:GeoVolume>
+		<geo3dml:Vertices  Sel="1" Nval="0" Num="2"/>
+		<geo3dml:Polyhedrons  Sel="1" Nval="0" Num="2"/>	
+	</geo3dml:GeoVolume>	
+	<geo3dml:Tetrahedron>
+		<VertexList  Sel="0" Nval="1" Num="1"/>
+		<NeighborList  Sel="1" Nval="0" Num="2"/>	
+	</geo3dml:Tetrahedron>
+	<geo3dml:Cuboid>
+		<Vertices Sel="0" Nval="1" Num="1"/>
+	</geo3dml:Cuboid>
+	<geo3dml:GeoGrid>
+		<gml:Grid  Sel="0" Nval="1" Num="1"/>
+		<geo3dml:TransformationMatrix  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoGrid>
+	<geo3dml:GeoDiscreteCoverage>
+		<DomainSetExt Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoDiscreteCoverage>
+	<DomainSetExt>
+		<SamplingFrame  Sel="0" Nval="1" Num="1"/>
+		<SamplingTarget  Sel="0" Nval="1" Num="1"/>
+	</DomainSetExt>	
+	<geo3dml:Geo3DStyle>
+		<se:FeatureTypeStyle Sel="1" Nval="0" Num="2"/>
+		<se:CoverageStyle Sel="1" Nval="0" Num="2"/>
+	</geo3dml:Geo3DStyle>
+	<geo3dml:Material>
+		<AmbientIntensity  Sel="1" Nval="0" Num="2"/>
+		<geo3dml:DiffuseColor  Sel="1" Nval="0" Num="2"/>
+		<geo3dml:EmissiveColor  Sel="1" Nval="0" Num="2"/>
+		<Shininess  Sel="1" Nval="0" Num="2"/>
+		<geo3dml:SpecularColor  Sel="1" Nval="0" Num="2"/>
+		<Transparency  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:Material>
+	<geo3dml:AbstractTexture>
+		<ImageURI Sel="0" Nval="1" Num="1"/>
+		<MimeType  Sel="0" Nval="1" Num="1"/>
+		<WrapMode  Sel="0" Nval="1" Num="1"/>
+		<BorderColor  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:AbstractTexture>
+	<geo3dml:GeoReferencedTexture>
+		<EsriWorldFile  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoReferencedTexture>
+	<geo3dml:ParameterizedTexture>
+		<TexCoordList  Sel="1" Nval="0" Num="2"/>
+		<TexCoordGen  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:ParameterizedTexture>
+	<geo3dml:GeoPointSymbolizer>
+		<Material  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoPointSymbolizer>
+	<geo3dml:GeoLineSymbolizer>
+		<Material  Sel="1" Nval="0" Num="2"/>
+	</geo3dml:GeoLineSymbolizer>
+	<geo3dml:GeoModelMetadata>
+		<Description Sel="0" Nval="1" Num="1"/>
+		<ToolName Sel="0" Nval="1" Num="1"/>
+		<ToolVersion Sel="0" Nval="1" Num="1"/>
+	</geo3dml:GeoModelMetadata>
+	<Dimension Sel="1" Nval="1" Num="1"/>
+	<geo3dml:Cells>
+		<ZValue Sel="1" Nval="1" Num="1"/>
+		<Cell Sel="1" Nval="1" Num="3"/>
+	</geo3dml:Cells>
+	<Cell Sel="1" Nval="1" Num="3"/>
+	<ZValue Sel="1" Nval="1" Num="1"/>
+	<geo3dml:Pillars>
+		<geo3dml:Pillar Sel="1" Nval="1" Num="3"/>
+	</geo3dml:Pillars>
+	<geo3dml:Pillar>
+		<geo3dml:HeadPos Sel="1" Nval="1" Num="1"/>
+		<geo3dml:TailPos Sel="1" Nval="1" Num="1"/>	
+	</geo3dml:Pillar>
+	<Name/>
+	<Type/>
+	<Metadata/>
+	<FeatureRelationship/>
+	<Relation/>
+	<Description/>
+	<Model/>
+	<Field/>
+	<Shape/>
+	<ShapeProperty/>
+	<TransformationMatrix/>
+	<Grid/>
+	<SamplingFrame/>
+	<SamplingTarget/>
+	<se:FeatureTypeStyle/>
+	<se:CoverageStyle/>
+	<AmbientIntensity/>
+	<geo3dml:DiffuseColor/>
+	<geo3dml:EmissiveColor/>
+	<Shininess/>
+	<geo3dml:SpecularColor/>
+	<Transparency/>
+	<ImageURI/>
+	<MimeType/>
+	<WrapMode/>
+	<BorderColor/>
+	<EsriWorldFile/>
+	<ReferencePoint/>
+	<Orientation/>
+	<TexCoordList/>
+	<TexCoordGen/>
+	<VertexSymbolizer/>
+	<FrameSymbolizer/>
+	<se:Symbolizer/>
+	<ToolName/>
+	<ToolVersion/>
+	<include/>
+	<FeatureClasses/>
+	<name/>
+	<Schema/>
+	<Rule/>
+	<Filter/>
+	<PropertyIsEqualTo/>
+	<PropertyName/>
+	<Literal/>
+	<Text/>
+	<field/>
+	<Feature/>
+	<NeighborList/>
+	<VertexList/>
+	<Vertex/>
+	<Map/>
+	<Layer/>
+	<Style/>
+	<swe:Count/>
+	<swe:CountRange/>
+	<swe:Quantity/>
+	<swe:QuantityRange/>
+	<swe:Category/>
+	<swe:CategoryRange/>
+	<swe:Vector/>
+	<swe:DataChoice/>
+	<swe:DataArray/>
+	<swe:Matrix/>
+	<swe:value/>
+	<string/>
+	<geo3dml:IntrudeRelation/>
+	<geo3dml:AggregationRelation/>
+	<geo3dml:BoundaryRelation/>
+	<BoundaryRelationship/>
+	<Polyhedrons/>
+	<Graphic/>
+	<Size/>
+	<Stroke/>
+	<SvgParameter/>
+	<GeoDiscreteCoverage/>
+	<GeoDiscreteCoverageSymbolizer/>
+	<DomainSetExt/>
+	<SamplingTarget/>
+	<SamplingFrame/>
+	<SpatialReferenceSystem/>
+	<SpatialReferenceSystemUsingGeographicIdentifiers/>
+	<CoordinateReferenceSystem/>
+	<CoordinateReferenceSystemIdentifier/>
+	<CoordinateSystemType/>
+	<CoordinateSystemIdentifier/>
+	<Parameter/>
+	<VerticalReferenceSystem/>
+	<VerticalReferenceSystemIdentifier/>
+	<Background/>
+	<Light/>
+	<On/>
+	<Type/>
+	<Position/>
+	<FocalPosition/>
+	<Intensity/>
+	<AmbientColor/>
+	<DiffuseColor/>
+	<SpecularColor/>
+	<GeoCornerPointGrid/>
+	<Valid/>
+	<LineString/>
+	<posList/>
+	<Point/>
+	<pos/>
+	<geo3dml:uom/>
+	<geo3dml:DataType/>
+	<geo3dml:PropertyPosType/>
+	<geo3dml:GeoPropertyDataType/>
+	<geo3dml:PropertyFeildType/>
+	<geo3dml:Values/>
+	<geo3dml:DataType/>
+	<geo3dml:DataSize/>
+	<geo3dml:Data/>
+	<geo3dml:rangeType/>
+	<geo3dml:DataRecord/>
+	<geo3dml:Propertymodels/>
+	<geo3dml:domainSet/>
+	<geo3dml:GeoPropertyRange/>
+	<geo3dml:CoverageType3DStyle/>
+	<geo3dml:RasterSymbolizer/>
+	<geo3dml:ColorMap/>
+	<geo3dml:ColorMapEntry/>
+</Dict>

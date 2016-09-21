@@ -13,6 +13,7 @@
 		127CEF311D8C3C9B00BE5F22 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CEF301D8C3C9B00BE5F22 /* Logger.swift */; };
 		12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87541D79D65E006511B4 /* SplitViewController.swift */; };
 		12DC87571D79D926006511B4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87561D79D926006511B4 /* WindowController.swift */; };
+		F805EAF51D925C29000626CD /* ModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F805EAF41D925C29000626CD /* ModelDelegate.swift */; };
 		F81920861D91255800324296 /* ModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81920851D91255800324296 /* ModelAdapter.swift */; };
 		F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5A1D77D76600827D0C /* AppDelegate.swift */; };
 		F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5C1D77D76600827D0C /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		F8B65A971D77D94C00827D0C /* Gml.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A8F1D77D94C00827D0C /* Gml.swift */; };
 		F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A901D77D94C00827D0C /* GeoSRS.swift */; };
 		F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A9A1D7816CD00827D0C /* Base.swift */; };
+		F8D727F01D927EB5007DD529 /* resources in Resources */ = {isa = PBXBuildFile; fileRef = F8D727EF1D927EB5007DD529 /* resources */; };
 		F8F61BB31D7EA5D200517374 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F61BB21D7EA5D200517374 /* Node.swift */; };
 		F8F61BB51D7EA62400517374 /* SearchableOutlineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F61BB41D7EA62400517374 /* SearchableOutlineView.swift */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,7 @@
 		127CEF301D8C3C9B00BE5F22 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		12DC87541D79D65E006511B4 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		12DC87561D79D926006511B4 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		F805EAF41D925C29000626CD /* ModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDelegate.swift; sourceTree = "<group>"; };
 		F81920851D91255800324296 /* ModelAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelAdapter.swift; sourceTree = "<group>"; };
 		F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo3DMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B65A5A1D77D76600827D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +84,7 @@
 		F8B65A8F1D77D94C00827D0C /* Gml.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gml.swift; sourceTree = "<group>"; };
 		F8B65A901D77D94C00827D0C /* GeoSRS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeoSRS.swift; sourceTree = "<group>"; };
 		F8B65A9A1D7816CD00827D0C /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
+		F8D727EF1D927EB5007DD529 /* resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = resources; sourceTree = "<group>"; };
 		F8F61BB21D7EA5D200517374 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F8F61BB41D7EA62400517374 /* SearchableOutlineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableOutlineView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -126,7 +130,6 @@
 				127CEF301D8C3C9B00BE5F22 /* Logger.swift */,
 				1250AC591D8C4FAF000FB090 /* Formatter.swift */,
 				1250AC5B1D8C5E48000FB090 /* Utilities.swift */,
-				F81920851D91255800324296 /* ModelAdapter.swift */,
 			);
 			name = class;
 			sourceTree = "<group>";
@@ -163,6 +166,7 @@
 		F8B65A591D77D76600827D0C /* Geo3DMLViewer */ = {
 			isa = PBXGroup;
 			children = (
+				F8D727EF1D927EB5007DD529 /* resources */,
 				127CEF2F1D8C3C7300BE5F22 /* class */,
 				125203121D7BC9DA00013672 /* UI */,
 				12DC87531D79D630006511B4 /* controller */,
@@ -197,6 +201,7 @@
 		F8B65A991D77D95E00827D0C /* objects */ = {
 			isa = PBXGroup;
 			children = (
+				F81920851D91255800324296 /* ModelAdapter.swift */,
 				F8B65A891D77D94C00827D0C /* Type.swift */,
 				F8B65A8A1D77D94C00827D0C /* Geo3DModel.swift */,
 				F8B65A8B1D77D94C00827D0C /* Geo3DModelMetadata.swift */,
@@ -207,6 +212,7 @@
 				F8B65A901D77D94C00827D0C /* GeoSRS.swift */,
 				F8B65A871D77D93600827D0C /* Geo3DMap.swift */,
 				F8B65A9A1D7816CD00827D0C /* Base.swift */,
+				F805EAF41D925C29000626CD /* ModelDelegate.swift */,
 			);
 			name = objects;
 			sourceTree = "<group>";
@@ -273,6 +279,9 @@
 		F8B65A4F1D77D76600827D0C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					Dict,
+				);
 				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = skyrealman;
@@ -319,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F8B65A5F1D77D76600827D0C /* Assets.xcassets in Resources */,
+				F8D727F01D927EB5007DD529 /* resources in Resources */,
 				F8B65A621D77D76600827D0C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,6 +372,7 @@
 				127CEF311D8C3C9B00BE5F22 /* Logger.swift in Sources */,
 				12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */,
 				F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */,
+				F805EAF51D925C29000626CD /* ModelDelegate.swift in Sources */,
 				F8B65A971D77D94C00827D0C /* Gml.swift in Sources */,
 				1250AC5C1D8C5E48000FB090 /* Utilities.swift in Sources */,
 				F8B65A931D77D94C00827D0C /* Geo3DModelMetadata.swift in Sources */,
