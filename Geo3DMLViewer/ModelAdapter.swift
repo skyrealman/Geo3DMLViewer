@@ -21,6 +21,9 @@ class ModelAdapter{
         self.filePath = url.absoluteString
     }
     
+    func modelDirectoryPath() -> String{
+        return url.deletingLastPathComponent().absoluteString
+    }
     
     
     func parserDidStartDocument(_ parser: XMLParser) {
@@ -31,7 +34,7 @@ class ModelAdapter{
     }
 
     
-    func checkFileCode(){
+    func modelFileCode(){
         do{
             let _ = try String(contentsOf: url, encoding: String.Encoding.utf8)
 
@@ -40,8 +43,8 @@ class ModelAdapter{
         }
     }
     
-    func getFileList() -> [String]?{
-        let fileList = [String]()
+    func modelFileList() -> [String]?{
+        var fileList = [String]()
         Logger.instance.info(items: filePath)
         guard
             let data = try? Data(contentsOf: url)
@@ -50,12 +53,30 @@ class ModelAdapter{
         do {
             let xmlDoc = try DOMXMLDocument(xml: data)
             print(xmlDoc.xml)
-            Logger.instance.info(items: xmlDoc.root.children[3].children[0].children[0].attributes["href"])
-            Logger.instance.info(items: xmlDoc.root["Maps"]["Map"].children[0].attributes["href"])
-            guard xmlDoc.root["Geo3DProject"]["Maps"].children.count != 0 && xmlDoc.root["Geo3DProject"]["Models"].children.count != 0
+            //Logger.instance.info(items: xmlDoc.root.children[3].children[0].children[0].attributes["href"])
+            //Logger.instance.info(items: xmlDoc.root["Maps"]["Map"].children[0].attributes["href"])
+            guard xmlDoc.root["Maps"]["Map"].children.count != 0 && xmlDoc.root["Models"]["Model"].children.count != 0
             else {return nil}
-            let files = xmlDoc.root["Geo3DProject"]["Maps"]["Map"]["xi:include"].attributes["href"]
-            Logger.instance.info(items: files)
+            let model_count = xmlDoc.root["Maps"].children.count
+            let map_count = xmlDoc.root["Models"].children.count
+            if(model_count != map_count){
+                Logger.instance.warning(items: "模型的数据集数与图层集数不相等")
+            }
+            for i in 0 ..< model_count{
+                let file = (xmlDoc.root["Maps"].children[i])["xi:include"].attributes["href"]
+                if let file = file{
+                    fileList.append(file)
+                    Logger.instance.info(items: file)
+                }
+                
+            }
+            for i in 0 ..< map_count{
+                let file = (xmlDoc.root["Models"].children[i])["xi:include"].attributes["href"]
+                if let file = file{
+                    fileList.append(file)
+                    Logger.instance.info(items: file)
+                }
+            }
    
         } catch {
             Logger.instance.error(items: "\(error)")
