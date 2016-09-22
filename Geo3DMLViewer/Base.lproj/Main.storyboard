@@ -62,7 +62,7 @@
                                     <items>
                                         <menuItem title="New" keyEquivalent="n" id="Was-JA-tGl">
                                             <connections>
-                                                <action selector="newDocument:" target="Ady-hI-5gd" id="4Si-XN-c54"/>
+                                                <action selector="newItemEvent:" target="Voe-Tx-rLC" id="CDO-vc-Eri"/>
                                             </connections>
                                         </menuItem>
                                         <menuItem title="Open…" keyEquivalent="o" id="IAo-SY-fd9">
@@ -645,6 +645,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Geo3DMLViewer" customModuleProvider="target">
                     <connections>
+                        <outlet property="newItem" destination="Was-JA-tGl" id="gE1-Go-ETa"/>
                         <outlet property="openItem" destination="IAo-SY-fd9" id="oR9-gs-tZH"/>
                     </connections>
                 </customObject>

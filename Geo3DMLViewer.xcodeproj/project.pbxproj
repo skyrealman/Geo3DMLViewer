@@ -13,6 +13,11 @@
 		127CEF311D8C3C9B00BE5F22 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127CEF301D8C3C9B00BE5F22 /* Logger.swift */; };
 		12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87541D79D65E006511B4 /* SplitViewController.swift */; };
 		12DC87571D79D926006511B4 /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DC87561D79D926006511B4 /* WindowController.swift */; };
+		12E06DFD1D937D68009E62BC /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06DFC1D937D68009E62BC /* Element.swift */; };
+		12E06DFF1D937E9B009E62BC /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06DFE1D937E9B009E62BC /* Error.swift */; };
+		12E06E011D938E32009E62BC /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06E001D938E32009E62BC /* Document.swift */; };
+		12E06E031D938F35009E62BC /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06E021D938F35009E62BC /* Options.swift */; };
+		12E06E051D939549009E62BC /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06E041D939549009E62BC /* Parser.swift */; };
 		F805EAF51D925C29000626CD /* ModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F805EAF41D925C29000626CD /* ModelDelegate.swift */; };
 		F81920861D91255800324296 /* ModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81920851D91255800324296 /* ModelAdapter.swift */; };
 		F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5A1D77D76600827D0C /* AppDelegate.swift */; };
@@ -60,6 +65,11 @@
 		127CEF301D8C3C9B00BE5F22 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		12DC87541D79D65E006511B4 /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
 		12DC87561D79D926006511B4 /* WindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		12E06DFC1D937D68009E62BC /* Element.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
+		12E06DFE1D937E9B009E62BC /* Error.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		12E06E001D938E32009E62BC /* Document.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		12E06E021D938F35009E62BC /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
+		12E06E041D939549009E62BC /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		F805EAF41D925C29000626CD /* ModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDelegate.swift; sourceTree = "<group>"; };
 		F81920851D91255800324296 /* ModelAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelAdapter.swift; sourceTree = "<group>"; };
 		F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo3DMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +153,18 @@
 			name = controller;
 			sourceTree = "<group>";
 		};
+		12E06DFB1D937D3F009E62BC /* xml */ = {
+			isa = PBXGroup;
+			children = (
+				12E06DFC1D937D68009E62BC /* Element.swift */,
+				12E06DFE1D937E9B009E62BC /* Error.swift */,
+				12E06E001D938E32009E62BC /* Document.swift */,
+				12E06E021D938F35009E62BC /* Options.swift */,
+				12E06E041D939549009E62BC /* Parser.swift */,
+			);
+			name = xml;
+			sourceTree = "<group>";
+		};
 		F8B65A4E1D77D76600827D0C = {
 			isa = PBXGroup;
 			children = (
@@ -168,6 +190,7 @@
 			children = (
 				F8D727EF1D927EB5007DD529 /* resources */,
 				127CEF2F1D8C3C7300BE5F22 /* class */,
+				12E06DFB1D937D3F009E62BC /* xml */,
 				125203121D7BC9DA00013672 /* UI */,
 				12DC87531D79D630006511B4 /* controller */,
 				F8B65A991D77D95E00827D0C /* objects */,
@@ -356,6 +379,7 @@
 			files = (
 				F8B65A9B1D7816CD00827D0C /* Base.swift in Sources */,
 				1250AC5A1D8C4FAF000FB090 /* Formatter.swift in Sources */,
+				12E06E031D938F35009E62BC /* Options.swift in Sources */,
 				125203141D7BCA0300013672 /* ToolbarTextField.swift in Sources */,
 				F8B65A911D77D94C00827D0C /* Type.swift in Sources */,
 				F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */,
@@ -370,11 +394,15 @@
 				F81920861D91255800324296 /* ModelAdapter.swift in Sources */,
 				F8F61BB31D7EA5D200517374 /* Node.swift in Sources */,
 				127CEF311D8C3C9B00BE5F22 /* Logger.swift in Sources */,
+				12E06DFF1D937E9B009E62BC /* Error.swift in Sources */,
 				12DC87551D79D65E006511B4 /* SplitViewController.swift in Sources */,
 				F8B65A981D77D94C00827D0C /* GeoSRS.swift in Sources */,
+				12E06E011D938E32009E62BC /* Document.swift in Sources */,
 				F805EAF51D925C29000626CD /* ModelDelegate.swift in Sources */,
 				F8B65A971D77D94C00827D0C /* Gml.swift in Sources */,
+				12E06E051D939549009E62BC /* Parser.swift in Sources */,
 				1250AC5C1D8C5E48000FB090 /* Utilities.swift in Sources */,
+				12E06DFD1D937D68009E62BC /* Element.swift in Sources */,
 				F8B65A931D77D94C00827D0C /* Geo3DModelMetadata.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /Users/songzhen/Documents/swift/Geo3DMLViewer/Geo3DMLViewer/Dependencies/AEXML.framework;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -502,6 +531,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LIBRARY_SEARCH_PATHS = /Users/songzhen/Documents/swift/Geo3DMLViewer/Geo3DMLViewer/Dependencies/AEXML.framework;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
@@ -512,8 +542,15 @@
 		F8B65A7D1D77D76600827D0C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Geo3DMLViewer/resources",
+					"$(PROJECT_DIR)/Geo3DMLViewer/Dependencies",
+				);
 				INFOPLIST_FILE = Geo3DMLViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewer;
@@ -525,8 +562,15 @@
 		F8B65A7E1D77D76600827D0C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Geo3DMLViewer/resources",
+					"$(PROJECT_DIR)/Geo3DMLViewer/Dependencies",
+				);
 				INFOPLIST_FILE = Geo3DMLViewer/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.geobox.Geo3DMLViewer;

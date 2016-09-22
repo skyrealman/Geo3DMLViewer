@@ -12,6 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     
+    @IBOutlet weak var newItem: NSMenuItem!
     @IBOutlet weak var openItem: NSMenuItem!
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
@@ -64,5 +65,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
     }
+    @IBAction func newItemEvent(_ sender: AnyObject) {
+        let desktopDirectoryURL = try! FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+        let fileDestinationUrl = desktopDirectoryURL.appendingPathComponent("t1.xml")
+        let ma = ModelAdapter(url: fileDestinationUrl)
+        ma.checkFileCode()
+        guard
+            let xmlPath = Bundle.main.path(forResource: "m1", ofType: "xml", inDirectory: "resources"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: xmlPath))
+        else { return }
+        
+        do {
+            let xmlDoc = try DOMXMLDocument(xml: data)
+            //print(xmlDoc.xml)
+            for child in xmlDoc.root["Layers"]["Layer"].children{
+                print(child.name)
+            }
+            print(xmlDoc.root["Layers"]["Layer"].children.count)
+        } catch {
+            print("\(error)")
+        }
+    }
+    
 }
 
