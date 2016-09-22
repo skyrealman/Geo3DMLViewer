@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class ModelAdapter: NSObject, XMLParserDelegate{
+class ModelAdapter{
     let filePath: String
     let url: URL
     init(path: String){
@@ -20,38 +20,16 @@ class ModelAdapter: NSObject, XMLParserDelegate{
         self.url = url
         self.filePath = url.absoluteString
     }
-    func parseProjFile() -> [String]?{
-        var allModelFile: [String]?
-        let parser = XMLParser(contentsOf: URL(fileURLWithPath: filePath))
-        parser?.delegate = self
-        parser?.parse()
-        return allModelFile
-    }
-    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
-        if (elementName as NSString).isEqual(to: "geo3dml:Name"){
-            print(attributeDict)
-        }
-    }
+    
+    
+    
     func parserDidStartDocument(_ parser: XMLParser) {
         Logger.instance.debug(items: "开始解析XML")
     }
     func parserDidEndDocument(_ parser: XMLParser) {
         Logger.instance.debug(items: "XML解析完毕")
     }
-    
-    
-    func parser(_ parser: XMLParser, foundCharacters string: String) {
-        
-    }
-    func generateDictArray(){
-        let parser = XMLParser(contentsOf: url)
-        parser?.delegate = self
-        parser?.parse()
-        
-    }
-    func checkXMLWithDict(dictFile: URL){
-        
-    }
+
     
     func checkFileCode(){
         do{
@@ -62,4 +40,26 @@ class ModelAdapter: NSObject, XMLParserDelegate{
         }
     }
     
+    func getFileList() -> [String]?{
+        let fileList = [String]()
+        Logger.instance.info(items: filePath)
+        guard
+            let data = try? Data(contentsOf: url)
+        else {return nil}
+        
+        do {
+            let xmlDoc = try DOMXMLDocument(xml: data)
+            print(xmlDoc.xml)
+            Logger.instance.info(items: xmlDoc.root.children[3].children[0].children[0].attributes["href"])
+            Logger.instance.info(items: xmlDoc.root["Maps"]["Map"].children[0].attributes["href"])
+            guard xmlDoc.root["Geo3DProject"]["Maps"].children.count != 0 && xmlDoc.root["Geo3DProject"]["Models"].children.count != 0
+            else {return nil}
+            let files = xmlDoc.root["Geo3DProject"]["Maps"]["Map"]["xi:include"].attributes["href"]
+            Logger.instance.info(items: files)
+   
+        } catch {
+            Logger.instance.error(items: "\(error)")
+        }
+        return fileList
+    }
 }
