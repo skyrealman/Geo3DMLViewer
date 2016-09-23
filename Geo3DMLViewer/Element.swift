@@ -35,7 +35,7 @@ open class DOMXMLElement{
         self.value = value
         self.attributes = attributes
     }
-    
+
     open subscript(key: String) -> DOMXMLElement{
         guard let
             first = children.filter({$0.name == key}).first
@@ -64,6 +64,25 @@ open class DOMXMLElement{
             }
         }
         return found.count > 0 ? found : nil
+    }
+    open func isLeaf() -> Bool {
+        if self.children.count == 0{
+            return true
+        }
+        return false
+    }
+    
+    open func getAllLeaves(leaves: inout [String]){
+        if !self.isLeaf(){
+            for child in self.children{
+                if !leaves.contains(child.name){
+                    leaves.append(child.name)
+                }
+                child.getAllLeaves(leaves: &leaves)
+            }
+        }else{
+            
+        }
     }
     
     open func all(withValue value: String) -> [DOMXMLElement]?{

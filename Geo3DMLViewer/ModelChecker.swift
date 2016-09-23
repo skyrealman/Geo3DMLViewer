@@ -33,7 +33,7 @@ class BaseFileChecker{
         }
         return nil
     }
-    func FileCodeChecker(code: String){
+    func fileCodeChecker(code: String){
         do{
             if(code == "utf8"){
                 let _ = try String(contentsOf: url, encoding: String.Encoding.utf8)
@@ -43,7 +43,29 @@ class BaseFileChecker{
             Logger.instance.warning(items: "模型文件不是\(code)格式")
         }
     }
-    func FileSyntaxChecker(){
+    
+    func getDictList() -> [String]?{
+        var dictList = [String]()
+        guard
+        let dictFile = Bundle.main.path(forResource: "Dictionary", ofType: "xml", inDirectory: "resources"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: dictFile))
+        else {
+            Logger.instance.error(items: "找不到检验所需的字典文件")
+            return nil}
+        do{
+            let xmlDoc = try DOMXMLDocument(xml: data)
+            xmlDoc.root.getAllLeaves(leaves: &dictList)
+            for t in dictList{
+                print(t)
+            }
+            return dictList
+        }catch{
+            Logger.instance.error(items: "\(error)")
+        }
+        return nil
+    }
+    
+    func fileSyntaxChecker(){
         
     }
 }
@@ -54,8 +76,8 @@ class ProjFileChecker: BaseFileChecker{
         return false
     }
     
-    fileprivate func DirectoryPath() -> String{
-        return url.deletingLastPathComponent().absoluteString
+    fileprivate func directoryPath() -> String{
+        return url.deletingLastPathComponent().path
     }
     func checkFileExists() -> [String]?{
         guard let  FileList = self.getFileList() else{
@@ -64,7 +86,8 @@ class ProjFileChecker: BaseFileChecker{
         var existFileList: [String]?
         let fileManager = FileManager.default
         for file in FileList{
-            if fileManager.fileExists(atPath: self.DirectoryPath() + file){
+            
+            if fileManager.fileExists(atPath: self.directoryPath() + "/" + file){
                 existFileList?.append(file)
             }else{
                 Logger.instance.error(items: "模型关联文件\(file)不存在")
@@ -108,18 +131,33 @@ class ProjFileChecker: BaseFileChecker{
 
 class MapFileChecker: BaseFileChecker{
     func isMapFile() -> Bool{
+        if xmlDoc?.root.name == "Geo3DMap"{
+            return true
+        }
         return false
     }
-    override func FileSyntaxChecker() {
+    override func fileSyntaxChecker() {
+        let dictList = getDictList()
         
+        var syntaxList = [String]()
+        xmlDoc?.root.getAllLeaves(leaves: &syntaxList)
+        
+        for syntax in syntaxList{
+            if !(dictList?.contains(syntax))!{
+                Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签\(syntax)")
+            }
+        }
     }
 }
 
 class ModelFileChecker: BaseFileChecker{
     func isModelFile() -> Bool{
+        if xmlDoc?.root.name == "GeoModel"{
+            return true
+        }
         return false
     }
-    override func FileSyntaxChecker() {
+    override func fileSyntaxChecker() {
         
     }
 }

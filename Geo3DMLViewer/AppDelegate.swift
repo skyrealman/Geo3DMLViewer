@@ -58,8 +58,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //                    progressbar.inProgress = false
 //                    Logger.instance.debug(items: progressbar)
 //                }
-                let ma = ProjFileChecker(url: result!)
-                let _ = ma.checkFileExists()
+                let ma = BaseFileChecker(url: result!)
+                let _ = ma.getDictList()
                 
             }
         }else{
@@ -71,7 +71,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let desktopDirectoryURL = try! FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         let fileDestinationUrl = desktopDirectoryURL.appendingPathComponent("t1.xml")
         let ma = ProjFileChecker(url: fileDestinationUrl)
-        ma.FileCodeChecker(code: "utf8")
+        ma.fileCodeChecker(code: "utf8")
         guard
             let xmlPath = Bundle.main.path(forResource: "m1", ofType: "xml", inDirectory: "resources"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: xmlPath))
