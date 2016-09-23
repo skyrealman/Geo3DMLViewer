@@ -58,9 +58,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //                    progressbar.inProgress = false
 //                    Logger.instance.debug(items: progressbar)
 //                }
-                let ma = ModelAdapter(url: result!)
-                let _ = ma.modelFileList()
-                Logger.instance.info(items: ma.modelDirectoryPath())
+                let ma = ProjFileChecker(url: result!)
+                let _ = ma.checkFileExists()
                 
             }
         }else{
@@ -71,8 +70,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @IBAction func newItemEvent(_ sender: AnyObject) {
         let desktopDirectoryURL = try! FileManager.default.url(for: .desktopDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
         let fileDestinationUrl = desktopDirectoryURL.appendingPathComponent("t1.xml")
-        let ma = ModelAdapter(url: fileDestinationUrl)
-        ma.modelFileCode()
+        let ma = ProjFileChecker(url: fileDestinationUrl)
+        ma.FileCodeChecker(code: "utf8")
         guard
             let xmlPath = Bundle.main.path(forResource: "m1", ofType: "xml", inDirectory: "resources"),
             let data = try? Data(contentsOf: URL(fileURLWithPath: xmlPath))

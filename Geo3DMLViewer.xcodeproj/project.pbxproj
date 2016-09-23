@@ -19,7 +19,7 @@
 		12E06E031D938F35009E62BC /* Options.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06E021D938F35009E62BC /* Options.swift */; };
 		12E06E051D939549009E62BC /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12E06E041D939549009E62BC /* Parser.swift */; };
 		F805EAF51D925C29000626CD /* ModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F805EAF41D925C29000626CD /* ModelDelegate.swift */; };
-		F81920861D91255800324296 /* ModelAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81920851D91255800324296 /* ModelAdapter.swift */; };
+		F81920861D91255800324296 /* ModelChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F81920851D91255800324296 /* ModelChecker.swift */; };
 		F8B65A5B1D77D76600827D0C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5A1D77D76600827D0C /* AppDelegate.swift */; };
 		F8B65A5D1D77D76600827D0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B65A5C1D77D76600827D0C /* ViewController.swift */; };
 		F8B65A5F1D77D76600827D0C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8B65A5E1D77D76600827D0C /* Assets.xcassets */; };
@@ -71,7 +71,7 @@
 		12E06E021D938F35009E62BC /* Options.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Options.swift; sourceTree = "<group>"; };
 		12E06E041D939549009E62BC /* Parser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		F805EAF41D925C29000626CD /* ModelDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelDelegate.swift; sourceTree = "<group>"; };
-		F81920851D91255800324296 /* ModelAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelAdapter.swift; sourceTree = "<group>"; };
+		F81920851D91255800324296 /* ModelChecker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelChecker.swift; sourceTree = "<group>"; };
 		F8B65A571D77D76600827D0C /* Geo3DMLViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Geo3DMLViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8B65A5A1D77D76600827D0C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8B65A5C1D77D76600827D0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -127,21 +127,21 @@
 		125203121D7BC9DA00013672 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				F8F61BB21D7EA5D200517374 /* Node.swift */,
 				125203131D7BCA0300013672 /* ToolbarTextField.swift */,
 				F8F61BB41D7EA62400517374 /* SearchableOutlineView.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
 		};
-		127CEF2F1D8C3C7300BE5F22 /* class */ = {
+		127CEF2F1D8C3C7300BE5F22 /* log */ = {
 			isa = PBXGroup;
 			children = (
-				F8F61BB21D7EA5D200517374 /* Node.swift */,
 				127CEF301D8C3C9B00BE5F22 /* Logger.swift */,
 				1250AC591D8C4FAF000FB090 /* Formatter.swift */,
 				1250AC5B1D8C5E48000FB090 /* Utilities.swift */,
 			);
-			name = class;
+			name = log;
 			sourceTree = "<group>";
 		};
 		12DC87531D79D630006511B4 /* controller */ = {
@@ -189,7 +189,7 @@
 			isa = PBXGroup;
 			children = (
 				F8D727EF1D927EB5007DD529 /* resources */,
-				127CEF2F1D8C3C7300BE5F22 /* class */,
+				127CEF2F1D8C3C7300BE5F22 /* log */,
 				12E06DFB1D937D3F009E62BC /* xml */,
 				125203121D7BC9DA00013672 /* UI */,
 				12DC87531D79D630006511B4 /* controller */,
@@ -224,7 +224,7 @@
 		F8B65A991D77D95E00827D0C /* objects */ = {
 			isa = PBXGroup;
 			children = (
-				F81920851D91255800324296 /* ModelAdapter.swift */,
+				F81920851D91255800324296 /* ModelChecker.swift */,
 				F8B65A891D77D94C00827D0C /* Type.swift */,
 				F8B65A8A1D77D94C00827D0C /* Geo3DModel.swift */,
 				F8B65A8B1D77D94C00827D0C /* Geo3DModelMetadata.swift */,
@@ -391,7 +391,7 @@
 				F8B65A921D77D94C00827D0C /* Geo3DModel.swift in Sources */,
 				F8B65A961D77D94C00827D0C /* geometry.swift in Sources */,
 				F8B65A941D77D94C00827D0C /* Geo3DProject.swift in Sources */,
-				F81920861D91255800324296 /* ModelAdapter.swift in Sources */,
+				F81920861D91255800324296 /* ModelChecker.swift in Sources */,
 				F8F61BB31D7EA5D200517374 /* Node.swift in Sources */,
 				127CEF311D8C3C9B00BE5F22 /* Logger.swift in Sources */,
 				12E06DFF1D937E9B009E62BC /* Error.swift in Sources */,

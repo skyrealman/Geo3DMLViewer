@@ -10,6 +10,7 @@ import Cocoa
 
 protocol ModelDelegate{
     func checkModelFile() -> Bool
+    func getModelFile() -> [String]?
     func createModel()
     func renderModel()
     
