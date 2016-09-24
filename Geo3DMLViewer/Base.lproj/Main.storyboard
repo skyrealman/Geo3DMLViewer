@@ -83,6 +83,11 @@
                                                 </items>
                                             </menu>
                                         </menuItem>
+                                        <menuItem title="Check..." keyEquivalent="k" id="M9d-YE-wVT">
+                                            <connections>
+                                                <action selector="checkItemEvent:" target="Voe-Tx-rLC" id="cy2-4l-YfL"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="m54-Is-iLE"/>
                                         <menuItem title="Close" keyEquivalent="w" id="DVo-aG-piG">
                                             <connections>
@@ -645,6 +650,7 @@
                 </application>
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="Geo3DMLViewer" customModuleProvider="target">
                     <connections>
+                        <outlet property="checkItem" destination="M9d-YE-wVT" id="wdX-Pf-XiW"/>
                         <outlet property="newItem" destination="Was-JA-tGl" id="gE1-Go-ETa"/>
                         <outlet property="openItem" destination="IAo-SY-fd9" id="oR9-gs-tZH"/>
                     </connections>

@@ -8,6 +8,39 @@
 
 import Cocoa
 
+class DictGetter{
+    static func getDictList() -> [String]?{
+        var dictListOriginal = [String]()
+        var dictList = [String]()
+        guard
+            let dictFile = Bundle.main.path(forResource: "Dictionary", ofType: "xml", inDirectory: "resources"),
+            let data = try? Data(contentsOf: URL(fileURLWithPath: dictFile))
+            else {
+                Logger.instance.error(items: "找不到检验所需的字典文件")
+                return nil}
+        do{
+            let xmlDoc = try DOMXMLDocument(xml: data)
+            xmlDoc.root.getAllLeaves(leaves: &dictListOriginal)
+            for var word in dictListOriginal{
+                if(word.hasPrefix("geo3dml:")){
+                    let range = word.range(of: "geo3dml:")
+                    if range != nil {
+                        word.removeSubrange(range!)
+                        dictList.append(word)
+                    }
+                    
+                }else{
+                    dictList.append(word)
+                }
+            }
+            return dictList
+        }catch{
+            Logger.instance.error(items: "\(error)")
+        }
+        return nil
+    }
+}
+
 class BaseFileChecker{
     let filePath: String
     let url: URL
@@ -57,26 +90,7 @@ class BaseFileChecker{
             return nil
         }
     }
-    func getDictList() -> [String]?{
-        var dictList = [String]()
-        guard
-        let dictFile = Bundle.main.path(forResource: "Dictionary", ofType: "xml", inDirectory: "resources"),
-            let data = try? Data(contentsOf: URL(fileURLWithPath: dictFile))
-        else {
-            Logger.instance.error(items: "找不到检验所需的字典文件")
-            return nil}
-        do{
-            let xmlDoc = try DOMXMLDocument(xml: data)
-            xmlDoc.root.getAllLeaves(leaves: &dictList)
-            for t in dictList{
-                print(t)
-            }
-            return dictList
-        }catch{
-            Logger.instance.error(items: "\(error)")
-        }
-        return nil
-    }
+
     
     func fileSyntaxChecker(){
         
@@ -154,24 +168,72 @@ class ProjFileChecker: BaseFileChecker{
 
 class MapFileChecker: BaseFileChecker{
 
+    static let dictList: [String]? =  DictGetter.getDictList()
+    
     override func fileSyntaxChecker() {
-        let dictList = getDictList()
         
         var syntaxList = [String]()
         xmlDoc?.root.getAllLeaves(leaves: &syntaxList)
         
         for syntax in syntaxList{
-            if !(dictList?.contains(syntax))!{
-                Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签 \"\(syntax)\"")
+            if syntax.contains(":") {
+                let tmp = syntax.components(separatedBy: ":")[1]
+                if !((MapFileChecker.dictList?.contains(syntax))! || (MapFileChecker.dictList?.contains(tmp))!){
+                    Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签 \"\(syntax)\"")
+                }
+            }else{
+                if !(MapFileChecker.dictList?.contains(syntax))!{
+                    Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签 \"\(syntax)\"")
+                }
             }
+
         }
     }
 }
 
 class ModelFileChecker: BaseFileChecker{
-
+    
+    static let dictList: [String]? =  DictGetter.getDictList()
+    
     override func fileSyntaxChecker() {
         
+        var syntaxList = [String]()
+        xmlDoc?.root.getAllLeaves(leaves: &syntaxList)
+        
+        for syntax in syntaxList{
+            if syntax.contains(":") {
+                let tmp = syntax.components(separatedBy: ":")[1]
+                if !((ModelFileChecker.dictList?.contains(syntax))! || (ModelFileChecker.dictList?.contains(tmp))!){
+                    Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签 \"\(syntax)\"")
+                }
+            }else{
+                if !(MapFileChecker.dictList?.contains(syntax))!{
+                    Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签 \"\(syntax)\"")
+                }
+            }
+            
+        }
     }
 }
 
+extension String {
+    func nsRange(from range: Range<String.Index>) -> NSRange {
+        let utf16view = self.utf16
+        let from = range.lowerBound.samePosition(in: utf16view)
+        let to = range.upperBound.samePosition(in: utf16view)
+        return NSMakeRange(utf16view.distance(from: utf16view.startIndex, to: from),
+                           utf16view.distance(from: from, to: to))
+    }
+}
+
+extension String {
+    func range(from nsRange: NSRange) -> Range<String.Index>? {
+        guard
+            let from16 = utf16.index(utf16.startIndex, offsetBy: nsRange.location, limitedBy: utf16.endIndex),
+            let to16 = utf16.index(from16, offsetBy: nsRange.length, limitedBy: utf16.endIndex),
+            let from = String.Index(from16, within: self),
+            let to = String.Index(to16, within: self)
+            else { return nil }
+        return from ..< to
+    }
+}

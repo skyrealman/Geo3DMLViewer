@@ -54,8 +54,19 @@ class ToolbarTextField: NSTextField {
             progressRect.size.height = 2
             progressRect.size.width *= self.progress
             NSColor.alternateSelectedControlColor.set()
-            NSRectFillUsingOperation(progressRect, NSCompositingOperation.sourceIn)
+            
+            // 需要完善，看看如何给渲染添加动画
+            NSAnimationContext.runAnimationGroup({ (context) -> Void in
+                context.duration = 1
+                context.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionLinear)
+                NSRectFillUsingOperation(progressRect, NSCompositingOperation.sourceIn)
+                }, completionHandler: {() -> Void in
+                    
+                    
+                    
+            })
         }
     }
+    
     
 }
