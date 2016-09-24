@@ -43,7 +43,20 @@ class BaseFileChecker{
             Logger.instance.warning(items: "模型文件不是\(code)格式")
         }
     }
-    
+    func getFileType() -> String?{
+        //print(xmlDoc?.root.name)
+        if xmlDoc?.root.name == "Geo3DMap"{
+            return "Geo3DMap"
+        }else if xmlDoc?.root.name == "GeoModel"{
+            return "GeoModel"
+        }else if xmlDoc?.root.name == "Geo3DProject"{
+            return "Geo3DProject"
+        }
+        else{
+            Logger.instance.error(items: "未知的文件格式")
+            return nil
+        }
+    }
     func getDictList() -> [String]?{
         var dictList = [String]()
         guard
@@ -79,6 +92,16 @@ class ProjFileChecker: BaseFileChecker{
     fileprivate func directoryPath() -> String{
         return url.deletingLastPathComponent().path
     }
+    func getFilePath() -> [String]?{
+        var filePath = [String]()
+        let fileList = self.getFileList()
+        if let fileList = fileList{
+            filePath = fileList.map{
+                self.directoryPath() + "/" + $0
+            }
+        }
+        return filePath
+    }
     func checkFileExists() -> [String]?{
         guard let  FileList = self.getFileList() else{
             return nil
@@ -96,7 +119,7 @@ class ProjFileChecker: BaseFileChecker{
         return existFileList
     }
     
-    fileprivate func getFileList() -> [String]?{
+     fileprivate func getFileList() -> [String]?{
         var fileList = [String]()
         
         guard xmlDoc?.root["Maps"]["Map"].children.count != 0 && xmlDoc?.root["Models"]["Model"].children.count != 0
@@ -130,12 +153,7 @@ class ProjFileChecker: BaseFileChecker{
 }
 
 class MapFileChecker: BaseFileChecker{
-    func isMapFile() -> Bool{
-        if xmlDoc?.root.name == "Geo3DMap"{
-            return true
-        }
-        return false
-    }
+
     override func fileSyntaxChecker() {
         let dictList = getDictList()
         
@@ -144,19 +162,14 @@ class MapFileChecker: BaseFileChecker{
         
         for syntax in syntaxList{
             if !(dictList?.contains(syntax))!{
-                Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签\(syntax)")
+                Logger.instance.warning(items: "文件\(url.lastPathComponent)存在未知标签 \"\(syntax)\"")
             }
         }
     }
 }
 
 class ModelFileChecker: BaseFileChecker{
-    func isModelFile() -> Bool{
-        if xmlDoc?.root.name == "GeoModel"{
-            return true
-        }
-        return false
-    }
+
     override func fileSyntaxChecker() {
         
     }

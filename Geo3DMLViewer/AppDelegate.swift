@@ -58,8 +58,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //                    progressbar.inProgress = false
 //                    Logger.instance.debug(items: progressbar)
 //                }
-                let ma = BaseFileChecker(url: result!)
-                let _ = ma.getDictList()
+                let projFileChecker = ProjFileChecker(url: result!)
+                let fileList = projFileChecker.getFilePath()
+                if let fileList = fileList{
+                    for file in fileList{
+                        print(file)
+                        let baseFileChecker = BaseFileChecker(path: file)
+                        if(baseFileChecker.getFileType() == "Geo3DMap"){
+                            (baseFileChecker as! MapFileChecker).fileSyntaxChecker()
+                        }
+                    }
+                }
+
+                //let _ = ma.getDictList()
                 
             }
         }else{
