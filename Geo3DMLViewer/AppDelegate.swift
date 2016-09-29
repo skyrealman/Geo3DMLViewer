@@ -113,29 +113,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 progressbar.inProgress = true
                 let fileList = projFileChecker.getFilePath()
                 if let fileList = fileList{
-                    for time in 0..<fileList.count{
-                        
-                        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(time)) {
-                            let mapFileChecker = MapFileChecker(path: fileList[time])
-                            let modelFileChecker = ModelFileChecker(path: fileList[time])
-                            if(mapFileChecker.getFileType() == "Geo3DMap"){
-                                mapFileChecker.fileSyntaxChecker()
-                            }else if (modelFileChecker.getFileType() == "GeoModel"){
-                                modelFileChecker.fileSyntaxChecker()
-                            }else{
-                                
-                            }
-                            progressbar.progress =  CGFloat(time) / CGFloat(fileList.count)
-                            progressbar.stringValue = " 检查 | \(fileList[time])文件"
-                            if(time == fileList.count - 1){
-                                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(fileList.count)) {
-                                    progressbar.inProgress = false
-                                    progressbar.stringValue = " 检查完毕 | 详情见日志"
-                                }
-
-                            }
-                        }
-
+                    DispatchQueue.global().async {
+                        self.doTimeConsumingWork(fileList)
                     }
                 }
                 
@@ -144,6 +123,34 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             }
         }else{
             return
+        }
+    }
+    
+    fileprivate func doTimeConsumingWork(_ fileList: [String]){
+        let progressbar = NSApplication.shared().mainWindow?.toolbar?.items[4].view as! ToolbarTextField
+        for time in 0..<fileList.count{
+            let mapFileChecker = MapFileChecker(path: fileList[time])
+            let modelFileChecker = ModelFileChecker(path: fileList[time])
+            if(mapFileChecker.getFileType() == "Geo3DMap"){
+                mapFileChecker.fileSyntaxChecker()
+            }else if (modelFileChecker.getFileType() == "GeoModel"){
+                modelFileChecker.fileSyntaxChecker()
+            }else{
+                
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(time)) {
+
+                progressbar.progress =  CGFloat(time) / CGFloat(fileList.count)
+                progressbar.stringValue = " 检查 | \(fileList[time])文件"
+                if(time == fileList.count - 1){
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(fileList.count)) {
+                        progressbar.inProgress = false
+                        progressbar.stringValue = " 检查完毕 | 详情见日志"
+                    }
+                    
+                }
+            }
+            
         }
     }
     
